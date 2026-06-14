@@ -239,7 +239,7 @@ export default function AppointmentPage() {
 
               {/* Main Content Area */}
               <div className="flex-1 flex flex-col">
-                <div className="flex-1 p-8 overflow-y-auto max-h-[600px] custom-scrollbar">
+                <div className="flex-1 p-6 md:p-10">
                   
                   {/* Step 1: Location */}
                   {step === 1 && (
@@ -318,7 +318,7 @@ export default function AppointmentPage() {
 
                   {/* Step 4 & 5 Placeholders */}
                   {step >= 4 && (
-                    <div className="flex flex-col lg:flex-row h-full gap-8">
+                    <div className="flex flex-col lg:flex-row h-full gap-10">
                       {/* Left form area */}
                       <div className="flex-1">
                         {step === 4 && (
@@ -408,47 +408,47 @@ export default function AppointmentPage() {
                             </div>
                             <h4 className="text-sm font-bold text-[#00d5b4] mb-4 border-b pb-2 inline-block">Contact Information</h4>
                             
-                            <div className="space-y-4">
-                              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div className="space-y-5">
+                              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                                 <div>
-                                  <label className="text-xs text-gray-500 mb-1 block">First Name</label>
-                                  <input type="text" value={userInfo.firstName} onChange={e => setUserInfo({...userInfo, firstName: e.target.value})} className="w-full border rounded p-2 text-sm" placeholder="Plato" />
+                                  <label className="text-xs font-bold text-gray-500 mb-1.5 block uppercase tracking-wider">First Name</label>
+                                  <input type="text" value={userInfo.firstName} onChange={e => setUserInfo({...userInfo, firstName: e.target.value})} className="w-full border border-gray-200 rounded-lg p-3 text-sm focus:ring-2 focus:ring-[#00d5b4] focus:border-transparent outline-none bg-gray-50/50 transition-all font-medium" placeholder="Plato" />
                                 </div>
                                 <div>
-                                  <label className="text-xs text-gray-500 mb-1 block">Last Name</label>
-                                  <input type="text" value={userInfo.lastName} onChange={e => setUserInfo({...userInfo, lastName: e.target.value})} className="w-full border rounded p-2 text-sm" placeholder="Farley" />
+                                  <label className="text-xs font-bold text-gray-500 mb-1.5 block uppercase tracking-wider">Last Name</label>
+                                  <input type="text" value={userInfo.lastName} onChange={e => setUserInfo({...userInfo, lastName: e.target.value})} className="w-full border border-gray-200 rounded-lg p-3 text-sm focus:ring-2 focus:ring-[#00d5b4] focus:border-transparent outline-none bg-gray-50/50 transition-all font-medium" placeholder="Farley" />
                                 </div>
                               </div>
                               <div>
-                                <label className="text-xs text-gray-500 mb-1 block">Phone Number</label>
-                                <input type="text" value={userInfo.phone} onChange={e => setUserInfo({...userInfo, phone: e.target.value})} className="w-full border rounded p-2 text-sm" placeholder="+60 14-744 9356" />
+                                <label className="text-xs font-bold text-gray-500 mb-1.5 block uppercase tracking-wider">Phone Number</label>
+                                <input type="text" value={userInfo.phone} onChange={e => setUserInfo({...userInfo, phone: e.target.value})} className="w-full border border-gray-200 rounded-lg p-3 text-sm focus:ring-2 focus:ring-[#00d5b4] focus:border-transparent outline-none bg-gray-50/50 transition-all font-medium" placeholder="+60 14-744 9356" />
                               </div>
                               <div>
-                                <label className="text-xs text-gray-500 mb-1 block">Email Address</label>
-                                <input type="email" value={userInfo.email} onChange={e => setUserInfo({...userInfo, email: e.target.value})} className="w-full border rounded p-2 text-sm" placeholder="email@example.com" />
+                                <label className="text-xs font-bold text-gray-500 mb-1.5 block uppercase tracking-wider">Email Address</label>
+                                <input type="email" value={userInfo.email} onChange={e => setUserInfo({...userInfo, email: e.target.value})} className="w-full border border-gray-200 rounded-lg p-3 text-sm focus:ring-2 focus:ring-[#00d5b4] focus:border-transparent outline-none bg-gray-50/50 transition-all font-medium" placeholder="email@example.com" />
                               </div>
                               <div>
-                                <label className="text-xs text-gray-500 mb-1 block">Car Model</label>
-                                <input type="text" value={userInfo.carModel} onChange={e => setUserInfo({...userInfo, carModel: e.target.value})} className="w-full border rounded p-2 text-sm" placeholder="Honda Civic" />
+                                <label className="text-xs font-bold text-gray-500 mb-1.5 block uppercase tracking-wider">Car Model</label>
+                                <input type="text" value={userInfo.carModel} onChange={e => setUserInfo({...userInfo, carModel: e.target.value})} className="w-full border border-gray-200 rounded-lg p-3 text-sm focus:ring-2 focus:ring-[#00d5b4] focus:border-transparent outline-none bg-gray-50/50 transition-all font-medium" placeholder="Honda Civic" />
                               </div>
                               <div>
-                                <label className="text-xs text-gray-500 mb-1 block">Number Plate</label>
-                                <input type="text" value={userInfo.numberPlate} onChange={e => setUserInfo({...userInfo, numberPlate: e.target.value})} className="w-full border rounded p-2 text-sm" placeholder="VBA 1234" />
+                                <label className="text-xs font-bold text-gray-500 mb-1.5 block uppercase tracking-wider">Number Plate</label>
+                                <input type="text" value={userInfo.numberPlate} onChange={e => setUserInfo({...userInfo, numberPlate: e.target.value})} className="w-full border border-gray-200 rounded-lg p-3 text-sm focus:ring-2 focus:ring-[#00d5b4] focus:border-transparent outline-none bg-gray-50/50 transition-all font-medium" placeholder="VBA 1234" />
                               </div>
                               <div>
-                                <label className="text-xs text-gray-500 mb-1 block">Note</label>
-                                <textarea value={userInfo.note} onChange={e => setUserInfo({...userInfo, note: e.target.value})} className="w-full border rounded p-2 text-sm h-20 resize-none" placeholder="Any special requests?"></textarea>
+                                <label className="text-xs font-bold text-gray-500 mb-1.5 block uppercase tracking-wider">Note</label>
+                                <textarea value={userInfo.note} onChange={e => setUserInfo({...userInfo, note: e.target.value})} className="w-full border border-gray-200 rounded-lg p-3 text-sm h-24 resize-none focus:ring-2 focus:ring-[#00d5b4] focus:border-transparent outline-none bg-gray-50/50 transition-all font-medium" placeholder="Any special requests?"></textarea>
                               </div>
                             </div>
                             
-                            <div className="mt-8 flex justify-between items-center">
-                              <button onClick={handleBack} className="text-gray-500 text-sm font-bold flex items-center gap-1 hover:text-black">
+                            <div className="mt-10 flex flex-col-reverse sm:flex-row justify-between items-center gap-4">
+                              <button onClick={handleBack} className="text-gray-500 text-sm font-bold flex items-center gap-2 hover:text-black transition-colors px-4 py-3 sm:p-0">
                                 <ArrowLeft className="w-4 h-4" /> Back
                               </button>
                               <button 
                                 onClick={handleSubmit}
                                 disabled={loading}
-                                className="bg-[#00d5b4] text-white px-6 py-2 rounded text-sm font-bold flex items-center gap-2 disabled:opacity-50"
+                                className="w-full sm:w-auto bg-[#00d5b4] text-black px-10 py-3.5 rounded-lg text-sm font-black uppercase tracking-wider flex items-center justify-center gap-2 disabled:opacity-50 hover:bg-[#00bda0] transition-colors shadow-lg shadow-[#00d5b4]/20"
                               >
                                 {loading ? 'Processing...' : 'Checkout ->'}
                               </button>
@@ -458,7 +458,7 @@ export default function AppointmentPage() {
                       </div>
 
                       {/* Right Summary Area */}
-                      <div className="w-full lg:w-[250px] border-t lg:border-t-0 lg:border-l pt-8 lg:pt-0 lg:pl-8 shrink-0 flex flex-col justify-between">
+                      <div className="w-full lg:w-[320px] bg-gray-50 rounded-xl p-6 lg:p-8 border border-gray-100 shrink-0 flex flex-col justify-between h-fit lg:sticky lg:top-8 shadow-sm">
                         <div>
                           <div className="flex justify-between items-center border-b pb-4 mb-6">
                             <h3 className="font-black text-black">Summary</h3>

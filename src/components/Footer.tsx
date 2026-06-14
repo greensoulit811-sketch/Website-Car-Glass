@@ -55,7 +55,7 @@ const Footer = () => {
           <div>
             <h4 className="font-heading text-lg font-semibold uppercase tracking-wider mb-4">{t('footer.contact_title')}</h4>
             <div className="font-body text-sm text-primary-foreground/40 space-y-2">
-              {s?.contact_address && <p>{s.contact_address}</p>}
+              {s?.contact_address && <a href="https://maps.app.goo.gl/XeihvznitHPvkU6bA" target="_blank" rel="noopener noreferrer" className="hover:text-neon transition-colors block">{s.contact_address}</a>}
               {s?.contact_email && <p>{s.contact_email}</p>}
               {s?.contact_phone && <p>{s.contact_phone}</p>}
               {s?.whatsapp_number && <p>{t('footer.whatsapp')}: {s.whatsapp_number}</p>}

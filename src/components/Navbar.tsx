@@ -1,6 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
 import { MapPin, Phone, Percent, Clock, Facebook, Instagram, Menu, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import { useAdminAuth } from '@/hooks/useAdminAuth';
 
 // Custom TikTok icon
 const TikTokIcon = ({ className }: { className?: string }) => (
@@ -24,6 +25,7 @@ const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const { isAdmin } = useAdminAuth();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -43,6 +45,10 @@ const Navbar = () => {
     { title: 'APPOINTMENT', path: '/appointment' },
   ];
 
+  if (isAdmin) {
+    navLinks.push({ title: 'DASHBOARD', path: '/admin' });
+  }
+
   const tealColor = "#00d5b4";
 
   return (
@@ -54,10 +60,10 @@ const Navbar = () => {
           {/* Mobile Layout */}
           <div className="flex flex-col md:hidden items-center justify-center gap-1.5 text-[11px] w-full text-center">
             <div className="flex flex-wrap justify-center items-center gap-x-4 gap-y-1">
-              <div className="flex items-center gap-1.5 text-gray-400">
+              <a href="https://maps.app.goo.gl/XeihvznitHPvkU6bA" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 text-gray-400 hover:text-[#00d5b4] transition-colors">
                 <MapPin size={12} color={tealColor} className="shrink-0" />
                 <span>Shah Alam, Selangor</span>
-              </div>
+              </a>
               <div className="flex items-center gap-1.5 text-white font-medium">
                 <Phone size={12} color={tealColor} className="shrink-0" />
                 <span>+60103660467</span>
@@ -77,10 +83,10 @@ const Navbar = () => {
           <div className="hidden md:flex justify-between items-center text-[13px] w-full">
             {/* Left side */}
             <div className="flex items-center gap-6">
-              <div className="flex items-center gap-2">
+              <a href="https://maps.app.goo.gl/XeihvznitHPvkU6bA" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-[#00d5b4] transition-colors">
                 <MapPin size={15} color={tealColor} className="shrink-0" />
                 <span>13, Jln Setia Gemilang BG U13/BG, 40170 Shah Alam, Selangor</span>
-              </div>
+              </a>
               <div className="flex items-center gap-2 font-medium text-white">
                 <Phone size={15} color={tealColor} className="shrink-0" />
                 <span>+60103660467</span>

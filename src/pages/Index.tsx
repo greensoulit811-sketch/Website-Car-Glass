@@ -172,7 +172,7 @@ const Index = () => {
       <Navbar />
 
       {/* Static Hero Section */}
-      <section className="relative w-full min-h-[90vh] bg-[#111827] flex flex-col justify-center pb-32 pt-28">
+      <section className="relative w-full min-h-[90vh] bg-[#111827] flex flex-col md:justify-center pb-0 md:pb-32 pt-28">
         {/* Background Image with Dark Overlay */}
         <div className="absolute inset-0 z-0 bg-[#111827]">
           <AnimatePresence mode="wait">
@@ -188,7 +188,7 @@ const Index = () => {
           <div className="absolute inset-0 bg-gradient-to-t from-[#111827] via-transparent to-[#111827]/30"></div>
         </div>
 
-        <div className="container mx-auto px-4 lg:px-8 relative z-10 text-center flex flex-col items-center">
+        <div className="container mx-auto px-4 lg:px-8 relative z-10 text-center flex flex-col items-center flex-1 justify-center py-12 md:py-0">
           <span className="text-[#00d5b4] text-[13px] font-bold tracking-widest mb-6">WHO WE ARE ?</span>
           
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-black text-white uppercase leading-[1.2] mb-8  tracking-widest" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
@@ -202,29 +202,29 @@ const Index = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-8 mb-14">
-            <div className="flex items-center gap-3 bg-[#1a2336]/60 backdrop-blur-sm px-6 py-3.5 rounded border border-gray-700/50">
-              <Users className="text-white w-5 h-5" />
+            <div className="flex items-center gap-3 bg-[#1a2336]/60 backdrop-blur-sm px-6 py-3.5 rounded border border-gray-700/50 w-full sm:w-auto justify-center">
+              <Users className="text-white w-5 h-5 shrink-0" />
               <span className="text-white text-sm font-bold tracking-wide">Professional & Creative Staff</span>
             </div>
-            <div className="flex items-center gap-3 bg-[#1a2336]/60 backdrop-blur-sm px-6 py-3.5 rounded border border-gray-700/50">
-              <ShieldCheck className="text-white w-5 h-5" />
+            <div className="flex items-center gap-3 bg-[#1a2336]/60 backdrop-blur-sm px-6 py-3.5 rounded border border-gray-700/50 w-full sm:w-auto justify-center">
+              <ShieldCheck className="text-white w-5 h-5 shrink-0" />
               <span className="text-white text-sm font-bold tracking-wide">Warranties & Guarantees</span>
             </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-5 mb-10">
-            <Link to="/appointment" className="bg-[#00d5b4] text-black font-black uppercase tracking-widest text-[13px] px-10 py-4 hover:bg-[#00c0a0] transition-colors rounded-sm shadow-lg shadow-[#00d5b4]/20">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-5 mb-10 md:mb-0 w-full sm:w-auto">
+            <Link to="/appointment" className="w-full sm:w-auto bg-[#00d5b4] text-black font-black uppercase tracking-widest text-[13px] px-10 py-4 hover:bg-[#00c0a0] transition-colors rounded-sm shadow-lg shadow-[#00d5b4]/20">
               BOOK APPOINTMENT
             </Link>
-            <a href="tel:+60103660467" className="flex items-center gap-3 border border-gray-600 bg-transparent text-white font-bold text-[13px] tracking-widest px-10 py-4 hover:bg-white/5 transition-colors rounded-sm">
-              <Phone className="w-4 h-4 text-gray-400" />
+            <a href="tel:+60103660467" className="w-full sm:w-auto flex items-center justify-center gap-3 border border-gray-600 bg-transparent text-white font-bold text-[13px] tracking-widest px-10 py-4 hover:bg-white/5 transition-colors rounded-sm">
+              <Phone className="w-4 h-4 text-gray-400 shrink-0" />
               +60103660467
             </a>
           </div>
         </div>
 
         {/* Info Cards */}
-        <div className="absolute left-0 right-0 -bottom-16 z-20">
+        <div className="relative md:absolute left-0 right-0 md:-bottom-16 z-20 w-full">
           <div className="container mx-auto px-4 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-0 max-w-4xl mx-auto shadow-2xl">
               <div className="bg-[#1e2434] p-10 lg:p-12 text-center md:text-left border-r border-gray-800/50">
@@ -560,7 +560,7 @@ const Index = () => {
               </div>
 
               <div className="flex flex-wrap items-center gap-4">
-                <a href={`https://maps.google.com/?q=${encodeURIComponent(settings?.contact_address || '119, Jln SBC 1, Taman Sri Batu Caves, 68100 Batu Caves, Selangor')}`} target="_blank" rel="noopener noreferrer" className="bg-transparent border border-[#00d5b4] text-[#00d5b4] hover:bg-[#00d5b4] hover:text-black font-black uppercase tracking-wider text-[12px] px-6 py-3 transition-colors flex items-center gap-2">
+                <a href="https://maps.app.goo.gl/XeihvznitHPvkU6bA" target="_blank" rel="noopener noreferrer" className="bg-transparent border border-[#00d5b4] text-[#00d5b4] hover:bg-[#00d5b4] hover:text-black font-black uppercase tracking-wider text-[12px] px-6 py-3 transition-colors flex items-center gap-2">
                   <MapPin className="w-4 h-4" /> GOOGLE MAP
                 </a>
                 <a href={`https://waze.com/ul?q=${encodeURIComponent(settings?.contact_address || 'Taman Sri Batu Caves')}`} target="_blank" rel="noopener noreferrer" className="bg-[#00d5b4] text-black hover:bg-white font-black uppercase tracking-wider text-[12px] px-6 py-3 transition-colors flex items-center gap-2">
