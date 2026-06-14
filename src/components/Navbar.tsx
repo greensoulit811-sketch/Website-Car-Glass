@@ -48,34 +48,59 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 w-full z-[100] font-sans shadow-lg">
       {/* Top Bar */}
-      <div className={`bg-[#242938] text-gray-300 transition-all duration-300 overflow-hidden ${scrolled ? 'h-0 opacity-0' : 'h-[42px] opacity-100'}`}>
-        <div className="container mx-auto px-4 lg:px-8 h-full flex items-center">
-          <div className="flex flex-col md:flex-row justify-between items-center text-[13px] w-full">
+      <div className={`bg-[#242938] text-gray-300 transition-all duration-300 overflow-hidden ${scrolled ? 'max-h-0 opacity-0 py-0' : 'max-h-[300px] opacity-100 py-2 md:py-0 md:h-[42px]'}`}>
+        <div className="container mx-auto px-4 lg:px-8 h-full flex items-center justify-center md:justify-between">
+          
+          {/* Mobile Layout */}
+          <div className="flex flex-col md:hidden items-center justify-center gap-1.5 text-[11px] w-full text-center">
+            <div className="flex flex-wrap justify-center items-center gap-x-4 gap-y-1">
+              <div className="flex items-center gap-1.5 text-gray-400">
+                <MapPin size={12} color={tealColor} className="shrink-0" />
+                <span>Shah Alam, Selangor</span>
+              </div>
+              <div className="flex items-center gap-1.5 text-white font-medium">
+                <Phone size={12} color={tealColor} className="shrink-0" />
+                <span>+60103660467</span>
+              </div>
+              <div className="flex items-center gap-1.5 text-gray-400">
+                <Clock size={12} color={tealColor} className="shrink-0" />
+                <span>09.00AM - 09.00PM</span>
+              </div>
+            </div>
+            <div className="flex items-center gap-1.5 font-bold text-[#00d5b4] bg-[#00d5b4]/10 px-3 py-0.5 rounded-full mt-0.5">
+              <Percent size={12} color={tealColor} className="shrink-0" />
+              <span>Discount 25% for every service</span>
+            </div>
+          </div>
+
+          {/* Desktop Layout */}
+          <div className="hidden md:flex justify-between items-center text-[13px] w-full">
             {/* Left side */}
-            <div className="flex items-center gap-6 mb-2 md:mb-0">
+            <div className="flex items-center gap-6">
               <div className="flex items-center gap-2">
-                <MapPin size={15} color={tealColor} />
+                <MapPin size={15} color={tealColor} className="shrink-0" />
                 <span>13, Jln Setia Gemilang BG U13/BG, 40170 Shah Alam, Selangor</span>
               </div>
-              <div className="flex items-center gap-2">
-                <Phone size={15} color={tealColor} />
+              <div className="flex items-center gap-2 font-medium text-white">
+                <Phone size={15} color={tealColor} className="shrink-0" />
                 <span>+60103660467</span>
               </div>
             </div>
 
             {/* Right side */}
             <div className="flex items-center gap-4">
-              <div className="flex items-center gap-2">
-                <Percent size={15} color={tealColor} />
+              <div className="flex items-center gap-2 font-bold text-[#00d5b4]">
+                <Percent size={15} color={tealColor} className="shrink-0" />
                 <span>Discount 25% for every service</span>
               </div>
-              <div className="h-4 w-px bg-gray-500 hidden md:block"></div>
+              <div className="h-4 w-px bg-gray-600"></div>
               <div className="flex items-center gap-2">
-                <Clock size={15} color={tealColor} />
+                <Clock size={15} color={tealColor} className="shrink-0" />
                 <span>09.00AM - 09.00PM</span>
               </div>
             </div>
           </div>
+
         </div>
       </div>
 
