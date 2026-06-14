@@ -50,8 +50,7 @@ export default function AppointmentPage() {
     features: []
   };
 
-  // Find a banner with title containing "Appointment" or "appointment" 
-  const appointmentBanner = banners.find(b => b.is_active && b.title.toLowerCase().includes('appointment'));
+  const appointmentBanner = banners.find(b => b.is_active && (b.link_url === '/appointment' || b.title.toLowerCase().includes('appointment')));
 
   const activeCategories = dbCategories.length > 0 ? dbCategories.map(c => ({
     id: c.slug,

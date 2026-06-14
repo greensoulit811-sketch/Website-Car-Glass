@@ -21,7 +21,12 @@ const BannersManager = () => {
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const openAdd = () => { setEditing(null); setForm({ title: '', subtitle: '', image_url: '', link_url: '/shop', is_active: true, position: 'hero' }); setShowForm(true); };
-  const openEdit = (b: DbBanner) => { setEditing(b); setForm({ title: b.title, subtitle: b.subtitle || '', image_url: b.image_url, link_url: b.link_url || '/shop', is_active: b.is_active ?? true, position: b.position }); setShowForm(true); };
+  const openEdit = (b: DbBanner) => { 
+    const isAppt = b.link_url === '/appointment' || b.title.toLowerCase().includes('appointment');
+    setEditing(b); 
+    setForm({ title: b.title, subtitle: b.subtitle || '', image_url: b.image_url, link_url: b.link_url || '/shop', is_active: b.is_active ?? true, position: isAppt ? 'appointment' : b.position }); 
+    setShowForm(true); 
+  };
 
   const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -48,10 +53,15 @@ const BannersManager = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      if (editing) { await updateBanner.mutateAsync({ id: editing.id, ...form }); toast.success('Banner updated'); }
-      else { await addBanner.mutateAsync(form); toast.success('Banner created'); }
+      const payload = { ...form };
+      if (payload.position === 'appointment') {
+        payload.position = 'promo';
+        payload.link_url = '/appointment';
+      }
+      if (editing) { await updateBanner.mutateAsync({ id: editing.id, ...payload }); toast.success('Banner updated'); }
+      else { await addBanner.mutateAsync(payload as any); toast.success('Banner created'); }
       setShowForm(false);
-    } catch { toast.error('Failed to save'); }
+    } catch (error) { console.error(error); toast.error('Failed to save'); }
   };
 
   if (isLoading) return <p className="text-center py-10 text-muted-foreground">Loading...</p>;
@@ -75,7 +85,7 @@ const BannersManager = () => {
               <img src={b.image_url} alt={b.title} className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
               <div className="absolute bottom-4 left-4 right-4">
-                <span className="inline-block px-2 py-0.5 text-xs font-body font-bold uppercase bg-white/20 text-white mb-2 rounded">{b.position}</span>
+                <span className="inline-block px-2 py-0.5 text-xs font-body font-bold uppercase bg-white/20 text-white mb-2 rounded">{b.link_url === '/appointment' ? 'appointment' : b.position}</span>
                 <h3 className="font-heading text-xl font-bold uppercase text-white">{b.title}</h3>
                 <p className="font-body text-sm text-white/80">{b.subtitle}</p>
               </div>
@@ -140,14 +150,16 @@ const BannersManager = () => {
                 <p className="font-body text-[10px] text-muted-foreground mt-1">USE A HIGH-QUALITY WIDE IMAGE FOR BEST RESULTS ON ALL SCREEN SIZES</p>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <label className="block font-body text-xs uppercase tracking-wider text-muted-foreground mb-1">Link URL</label>
-                  <input value={form.link_url} onChange={e => setForm({ ...form, link_url: e.target.value })} className="w-full px-4 py-2.5 border border-border bg-background rounded-md font-body text-sm text-foreground focus:outline-none focus:border-primary" />
-                </div>
+                {form.position !== 'appointment' && (
+                  <div>
+                    <label className="block font-body text-xs uppercase tracking-wider text-muted-foreground mb-1">Link URL</label>
+                    <input value={form.link_url} onChange={e => setForm({ ...form, link_url: e.target.value })} className="w-full px-4 py-2.5 border border-border bg-background rounded-md font-body text-sm text-foreground focus:outline-none focus:border-primary" />
+                  </div>
+                )}
                 <div>
                   <label className="block font-body text-xs uppercase tracking-wider text-muted-foreground mb-1">Position</label>
                   <select value={form.position} onChange={e => setForm({ ...form, position: e.target.value })} className="w-full px-4 py-2.5 border border-border bg-background rounded-md font-body text-sm text-foreground focus:outline-none focus:border-primary">
-                    <option value="hero">Hero</option><option value="promo">Promo</option><option value="category">Category</option>
+                    <option value="hero">Hero</option><option value="promo">Promo</option><option value="category">Category</option><option value="appointment">Appointment</option>
                   </select>
                 </div>
               </div>
