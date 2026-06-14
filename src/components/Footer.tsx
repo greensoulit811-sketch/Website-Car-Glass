@@ -15,7 +15,7 @@ const Footer = () => {
       <div className="container mx-auto px-4 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           <div>
-            <img src={s?.logo_url || '/logos.png'} alt={s?.site_name || 'Store'} className="h-14 w-auto mb-4" />
+            <img src={s?.logo_url || '/logo.png'} alt={s?.site_name || 'Store'} className="h-14 w-auto mb-4" />
             <p className="text-primary-foreground/60 font-body text-sm leading-relaxed mb-6">
               {s?.footer_description || 'Your ultimate destination for premium laptops and tech accessories in Malaysia.'}
             </p>

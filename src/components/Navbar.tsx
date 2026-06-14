@@ -2,6 +2,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { MapPin, Phone, Percent, Clock, Facebook, Instagram, Menu, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { useAdminAuth } from '@/hooks/useAdminAuth';
+import { useSettings } from '@/hooks/useDatabase';
 
 // Custom TikTok icon
 const TikTokIcon = ({ className }: { className?: string }) => (
@@ -26,6 +27,7 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   const { isAdmin } = useAdminAuth();
+  const { data: settings } = useSettings();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -117,7 +119,7 @@ const Navbar = () => {
             {/* Logo */}
             <div className="flex-shrink-0">
               <Link to="/">
-                <img src="/logos.png" alt="UVISION AUTO" className="h-16 w-auto object-contain" />
+                <img src={settings?.logo_url || "/logos.png"} alt="UVISION AUTO" className="h-16 w-auto object-contain" />
               </Link>
             </div>
 
