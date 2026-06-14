@@ -112,7 +112,7 @@ const Navbar = () => {
             {/* Social Icons & Mobile Menu Button */}
             <div className="flex items-center gap-4">
               <div className="hidden md:flex items-center gap-2.5">
-                <a href="#" className="w-8 h-8 flex items-center justify-center bg-[#00d5b4] hover:bg-[#00c0a0] transition-colors rounded-sm">
+                <a href="https://www.facebook.com/profile.php?id=100082093456990" className="w-8 h-8 flex items-center justify-center bg-[#00d5b4] hover:bg-[#00c0a0] transition-colors rounded-sm">
                   <Facebook size={18} className="text-black fill-black" />
                 </a>
                 <a href="#" className="w-8 h-8 flex items-center justify-center bg-[#00d5b4] hover:bg-[#00c0a0] transition-colors rounded-sm">
