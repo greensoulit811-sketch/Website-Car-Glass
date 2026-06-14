@@ -103,7 +103,7 @@ const AdminLayout = () => {
             <Menu className="w-6 h-6" />
           </button>
           <Link to="/admin" className="flex items-center gap-2">
-            <img src="/logo.png" alt="Bright Beam" className="h-8 w-auto brightness-0 invert" />
+            <img src="/logo.png" alt="SJ Tinted Shop" className="h-8 w-auto brightness-0 invert" />
             <span className="text-xs text-sidebar-foreground/60 font-body">Admin</span>
           </Link>
           <div className="w-6" />
@@ -115,7 +115,7 @@ const AdminLayout = () => {
             <SheetTitle className="sr-only">Admin Navigation</SheetTitle>
             <div className="h-14 flex items-center justify-between px-4 border-b border-sidebar-border">
               <Link to="/admin" className="flex items-center gap-2" onClick={() => setMobileOpen(false)}>
-                <img src="/logo.png" alt="Bright Beam" className="h-8 w-auto brightness-0 invert" />
+                <img src="/logo.png" alt="SJ Tinted Shop" className="h-8 w-auto brightness-0 invert" />
                 <span className="text-xs text-sidebar-foreground/60 font-body">Admin</span>
               </Link>
             </div>

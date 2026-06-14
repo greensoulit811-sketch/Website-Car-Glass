@@ -55,7 +55,7 @@ const AdminLoginPage = () => {
     <div className="min-h-screen bg-background flex items-center justify-center p-4">
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
-          <img src="/logo.png" alt="Bright Beam" className="h-16 mx-auto mb-4" />
+          <img src="/logo.png" alt="SJ Tinted Shop" className="h-16 mx-auto mb-4" />
           <h1 className="font-heading text-2xl font-bold uppercase tracking-wider text-foreground">Admin Panel</h1>
           <p className="font-body text-sm text-muted-foreground mt-1">
             {isSignUp ? 'Create your admin account' : 'Sign in to manage your store'}

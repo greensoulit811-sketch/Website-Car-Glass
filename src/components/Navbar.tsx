@@ -55,11 +55,11 @@ const Navbar = () => {
             <div className="flex items-center gap-6 mb-2 md:mb-0">
               <div className="flex items-center gap-2">
                 <MapPin size={15} color={tealColor} />
-                <span>Batu Caves, Selangor</span>
+                <span>13, Jln Setia Gemilang BG U13/BG, 40170 Shah Alam, Selangor</span>
               </div>
               <div className="flex items-center gap-2">
                 <Phone size={15} color={tealColor} />
-                <span>+60 11-6950 1634</span>
+                <span>+60103660467</span>
               </div>
             </div>
 
@@ -112,13 +112,13 @@ const Navbar = () => {
             {/* Social Icons & Mobile Menu Button */}
             <div className="flex items-center gap-4">
               <div className="hidden md:flex items-center gap-2.5">
-                <a href="https://www.facebook.com/profile.php?id=100082093456990" className="w-8 h-8 flex items-center justify-center bg-[#00d5b4] hover:bg-[#00c0a0] transition-colors rounded-sm">
+                <a href="https://www.facebook.com/share/p/1CFn9qVVpY/" className="w-8 h-8 flex items-center justify-center bg-[#00d5b4] hover:bg-[#00c0a0] transition-colors rounded-sm">
                   <Facebook size={18} className="text-black fill-black" />
                 </a>
-                <a href="#" className="w-8 h-8 flex items-center justify-center bg-[#00d5b4] hover:bg-[#00c0a0] transition-colors rounded-sm">
+                <a href="https://www.instagram.com/sjtintedshop?igsh=bHB1cndraDZpdW44" className="w-8 h-8 flex items-center justify-center bg-[#00d5b4] hover:bg-[#00c0a0] transition-colors rounded-sm">
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
                 </a>
-                <a href="#" className="w-8 h-8 flex items-center justify-center bg-[#00d5b4] hover:bg-[#00c0a0] transition-colors rounded-sm">
+                <a href="https://www.tiktok.com/@sjtintedandaccess?_r=1&_t=ZS-97CDN6hJxy9" className="w-8 h-8 flex items-center justify-center bg-[#00d5b4] hover:bg-[#00c0a0] transition-colors rounded-sm">
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
                 </a>
               </div>
@@ -155,13 +155,13 @@ const Navbar = () => {
             ))}
             
             <div className="flex items-center gap-3 pt-4 border-t border-gray-800">
-              <a href="#" className="w-8 h-8 flex items-center justify-center bg-[#00d5b4] hover:bg-[#00c0a0] rounded-sm">
+              <a href="https://www.facebook.com/share/p/1CFn9qVVpY/" className="w-8 h-8 flex items-center justify-center bg-[#00d5b4] hover:bg-[#00c0a0] rounded-sm">
                 <Facebook size={18} className="text-black fill-black" />
               </a>
-              <a href="#" className="w-8 h-8 flex items-center justify-center bg-[#00d5b4] hover:bg-[#00c0a0] rounded-sm">
+              <a href="https://www.instagram.com/sjtintedshop?igsh=bHB1cndraDZpdW44" className="w-8 h-8 flex items-center justify-center bg-[#00d5b4] hover:bg-[#00c0a0] rounded-sm">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
               </a>
-              <a href="#" className="w-8 h-8 flex items-center justify-center bg-[#00d5b4] hover:bg-[#00c0a0] rounded-sm">
+              <a href="https://www.tiktok.com/@sjtintedandaccess?_r=1&_t=ZS-97CDN6hJxy9" className="w-8 h-8 flex items-center justify-center bg-[#00d5b4] hover:bg-[#00c0a0] rounded-sm">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
               </a>
             </div>

@@ -10,8 +10,8 @@ import { MapPin, Phone, ArrowLeft, ArrowRight, CheckCircle2, ChevronRight, Chevr
 
 // Hardcoded data for demonstration based on screenshots
 const LOCATIONS = [
-  { id: 'batu_caves', title: 'Batu Caves', address: '119, Jln SBC 1, Taman Sri Batu Caves, 68100 Batu Caves, Selangor' },
-  { id: 'setia_alam', title: 'Setia Alam', address: '44-GF, Jalan Setia Perdana BF U13/BF, Setia Alam, 40170 Shah Alam, Selangor' }
+  { id: 'batu_caves', title: 'Batu Caves', address: '13, Jln Setia Gemilang BG U13/BG, 40170 Shah Alam, Selangor' },
+  { id: 'setia_alam', title: 'Setia Alam', address: '13, Jln Setia Gemilang BG U13/BG, 40170 Shah Alam, Selangor' }
 ];
 
 const CATEGORIES = [
@@ -43,7 +43,7 @@ export default function AppointmentPage() {
   const whyData = homeContent?.content?.whyChooseUs || {
     title: 'Top Tier Service',
     description: 'We deliver exceptional tinting solutions.',
-    emergencyPhone: '+60 11-6950 1634',
+    emergencyPhone: '+60103660467',
     stat1Value: '250+', stat1Label: 'Project Complete',
     stat2Value: '1.5K', stat2Label: 'Happy Costumer',
     images: [],
@@ -222,7 +222,7 @@ export default function AppointmentPage() {
             <div className="max-w-5xl mx-auto bg-white rounded shadow-2xl overflow-hidden flex flex-col md:flex-row min-h-[600px]">
               
               {/* Left Sidebar Context */}
-              <div className="md:w-[280px] bg-white border-r border-gray-200 p-8 flex flex-col justify-between shrink-0">
+              <div className="w-full md:w-[280px] bg-white border-b md:border-b-0 md:border-r border-gray-200 p-8 flex flex-col justify-between shrink-0">
                 <div className="text-center pt-8">
                   <div className="w-20 h-20 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-6">
                     {ctx?.icon}
@@ -318,7 +318,7 @@ export default function AppointmentPage() {
 
                   {/* Step 4 & 5 Placeholders */}
                   {step >= 4 && (
-                    <div className="flex h-full gap-8">
+                    <div className="flex flex-col lg:flex-row h-full gap-8">
                       {/* Left form area */}
                       <div className="flex-1">
                         {step === 4 && (
@@ -409,7 +409,7 @@ export default function AppointmentPage() {
                             <h4 className="text-sm font-bold text-[#00d5b4] mb-4 border-b pb-2 inline-block">Contact Information</h4>
                             
                             <div className="space-y-4">
-                              <div className="grid grid-cols-2 gap-4">
+                              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div>
                                   <label className="text-xs text-gray-500 mb-1 block">First Name</label>
                                   <input type="text" value={userInfo.firstName} onChange={e => setUserInfo({...userInfo, firstName: e.target.value})} className="w-full border rounded p-2 text-sm" placeholder="Plato" />
@@ -458,7 +458,7 @@ export default function AppointmentPage() {
                       </div>
 
                       {/* Right Summary Area */}
-                      <div className="w-[250px] border-l pl-8 shrink-0 flex flex-col justify-between">
+                      <div className="w-full lg:w-[250px] border-t lg:border-t-0 lg:border-l pt-8 lg:pt-0 lg:pl-8 shrink-0 flex flex-col justify-between">
                         <div>
                           <div className="flex justify-between items-center border-b pb-4 mb-6">
                             <h3 className="font-black text-black">Summary</h3>

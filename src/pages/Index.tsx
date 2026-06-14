@@ -56,7 +56,7 @@ const Index = () => {
   };
 
   const whyData = whyChooseUsPage?.content ? JSON.parse(whyChooseUsPage.content) : {
-    emergencyPhone: "+60 11-6950 1634",
+    emergencyPhone: "+60103660467",
     stat1Value: "250+", stat1Label: "Project Complete",
     stat2Value: "1.5K", stat2Label: "Happy Customer",
     title: "Unleash The Shade, Car Tinting And Protection Excellence",
@@ -216,9 +216,9 @@ const Index = () => {
             <Link to="/appointment" className="bg-[#00d5b4] text-black font-black uppercase tracking-widest text-[13px] px-10 py-4 hover:bg-[#00c0a0] transition-colors rounded-sm shadow-lg shadow-[#00d5b4]/20">
               BOOK APPOINTMENT
             </Link>
-            <a href="tel:+601169501634" className="flex items-center gap-3 border border-gray-600 bg-transparent text-white font-bold text-[13px] tracking-widest px-10 py-4 hover:bg-white/5 transition-colors rounded-sm">
+            <a href="tel:+60103660467" className="flex items-center gap-3 border border-gray-600 bg-transparent text-white font-bold text-[13px] tracking-widest px-10 py-4 hover:bg-white/5 transition-colors rounded-sm">
               <Phone className="w-4 h-4 text-gray-400" />
-              +60 11-6950 1634
+              +60103660467
             </a>
           </div>
         </div>

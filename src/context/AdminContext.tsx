@@ -94,9 +94,9 @@ interface AdminContextType {
 }
 
 const defaultSettings: SiteSettings = {
-  siteName: 'Bright Beam',
+  siteName: 'SJ Tinted Shop',
   siteDescription: 'Premium laptops and computing accessories in Malaysia',
-  metaTitle: 'Bright Beam - Best Laptops in Malaysia | ASUS, HP, Dell',
+  metaTitle: 'SJ Tinted Shop',
   metaDescription: 'Shop authentic ASUS, HP, Dell, and Lenovo laptops in Malaysia. Fast delivery and COD.',
   whatsappNumber: '+96512345678',
   instagramHandle: 'srkcollectionkw',

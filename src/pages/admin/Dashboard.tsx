@@ -1,28 +1,41 @@
 import { useOrders, useProducts } from '@/hooks/useDatabase';
 import { Package, ShoppingCart, DollarSign, Clock } from 'lucide-react';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, LineChart, Line } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
+import { useEffect, useState } from 'react';
+import { supabase } from '@/integrations/supabase/client';
 
 const Dashboard = () => {
   const { data: orders = [] } = useOrders();
   const { data: products = [] } = useProducts();
+  const [appointments, setAppointments] = useState<any[]>([]);
 
-  const totalRevenue = orders.reduce((s, o) => s + Number(o.total), 0);
-  const pendingOrders = orders.filter(o => o.status === 'pending').length;
-  const deliveredOrders = orders.filter(o => o.status === 'delivered').length;
+  useEffect(() => {
+    supabase.from('checkout_leads').select('*').eq('status', 'appointment').then(({data}) => {
+      if (data) setAppointments(data);
+    });
+  }, []);
+
+  const totalApptRevenue = appointments.filter(a => a.contacted).reduce((s, a) => s + Number(a.cart_total || 0), 0);
+  const totalOrderRevenue = orders.reduce((s, o) => s + Number(o.total), 0);
+  const totalRevenue = totalOrderRevenue + totalApptRevenue;
+
+  const pendingOrders = orders.filter(o => o.status === 'pending').length + appointments.filter(a => !a.contacted).length;
+  const deliveredOrders = orders.filter(o => o.status === 'delivered').length + appointments.filter(a => a.contacted).length;
+  const totalCount = orders.length + appointments.length;
 
   const stats = [
-    { label: 'Total Revenue', value: `RM ${totalRevenue.toFixed(2)}`, icon: DollarSign, change: `${orders.length} orders` },
-    { label: 'Total Orders', value: orders.length, icon: ShoppingCart, change: `${pendingOrders} pending` },
+    { label: 'Total Revenue', value: `RM ${totalRevenue.toFixed(2)}`, icon: DollarSign, change: `${totalCount} orders & appts` },
+    { label: 'Total Orders & Appts', value: totalCount, icon: ShoppingCart, change: `${pendingOrders} pending` },
     { label: 'Products', value: products.length, icon: Package, change: `${products.filter(p => p.is_active).length} active` },
-    { label: 'Delivered', value: deliveredOrders, icon: Clock, change: `${Math.round((deliveredOrders / (orders.length || 1)) * 100)}% rate` },
+    { label: 'Completed/Delivered', value: deliveredOrders, icon: Clock, change: `${Math.round((deliveredOrders / (totalCount || 1)) * 100)}% rate` },
   ];
 
   // Build revenue by status
   const statusData = [
-    { name: 'Pending', value: orders.filter(o => o.status === 'pending').length },
+    { name: 'Pending', value: orders.filter(o => o.status === 'pending').length + appointments.filter(a => !a.contacted).length },
     { name: 'Confirmed', value: orders.filter(o => o.status === 'confirmed').length },
     { name: 'Shipped', value: orders.filter(o => o.status === 'shipped').length },
-    { name: 'Delivered', value: orders.filter(o => o.status === 'delivered').length },
+    { name: 'Delivered/Completed', value: orders.filter(o => o.status === 'delivered').length + appointments.filter(a => a.contacted).length },
     { name: 'Cancelled', value: orders.filter(o => o.status === 'cancelled').length },
   ].filter(d => d.value > 0);
 
@@ -40,19 +53,39 @@ const Dashboard = () => {
     pending: 'bg-yellow-100 text-yellow-700', confirmed: 'bg-blue-100 text-blue-700',
     shipped: 'bg-purple-100 text-purple-700', delivered: 'bg-green-100 text-green-700',
     cancelled: 'bg-red-100 text-red-700',
+    completed: 'bg-green-100 text-green-700'
   };
 
+  const combinedRecent = [
+    ...orders.map(o => ({
+      id: o.id,
+      number: o.order_number,
+      customer: o.customer_name,
+      total: Number(o.total),
+      status: o.status,
+      date: new Date(o.created_at)
+    })),
+    ...appointments.map(a => ({
+      id: a.id,
+      number: 'APPT-' + a.id.substring(0, 4).toUpperCase(),
+      customer: a.customer_name,
+      total: Number(a.cart_total || 0),
+      status: a.contacted ? 'completed' : 'pending',
+      date: new Date(a.created_at)
+    }))
+  ].sort((a, b) => b.date.getTime() - a.date.getTime());
+
   // Revenue per order for chart
-  const revenueByOrder = orders.slice().reverse().slice(0, 10).map((o, i) => ({
-    name: o.order_number || `#${i + 1}`,
-    revenue: Number(o.total),
+  const revenueByOrder = combinedRecent.slice().reverse().slice(0, 10).map((o, i) => ({
+    name: o.number || `#${i + 1}`,
+    revenue: o.total,
   }));
 
   return (
     <div>
       <div className="mb-8">
         <h1 className="font-heading text-3xl font-bold uppercase tracking-wider text-foreground">Dashboard</h1>
-        <p className="font-body text-sm text-muted-foreground mt-1">Welcome back to Bright Beam admin</p>
+        <p className="font-body text-sm text-muted-foreground mt-1">Welcome back to SJ Tinted Shop admin</p>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
@@ -70,7 +103,7 @@ const Dashboard = () => {
 
       <div className="grid lg:grid-cols-3 gap-4 mb-8">
         <div className="lg:col-span-2 bg-card border border-border p-6 rounded-lg">
-          <h3 className="font-heading text-lg font-bold uppercase tracking-wider mb-4 text-foreground">Revenue by Order</h3>
+          <h3 className="font-heading text-lg font-bold uppercase tracking-wider mb-4 text-foreground">Revenue by Order & Appt</h3>
           <ResponsiveContainer width="100%" height={280}>
             <BarChart data={revenueByOrder}>
               <CartesianGrid strokeDasharray="3 3" stroke={gridStroke} />
@@ -97,7 +130,7 @@ const Dashboard = () => {
 
       <div className="grid lg:grid-cols-2 gap-4">
         <div className="bg-card border border-border p-6 rounded-lg">
-          <h3 className="font-heading text-lg font-bold uppercase tracking-wider mb-4 text-foreground">Order Status</h3>
+          <h3 className="font-heading text-lg font-bold uppercase tracking-wider mb-4 text-foreground">Order & Appt Status</h3>
           <ResponsiveContainer width="100%" height={220}>
             <BarChart data={statusData}>
               <CartesianGrid strokeDasharray="3 3" stroke={gridStroke} />
@@ -110,16 +143,16 @@ const Dashboard = () => {
         </div>
 
         <div className="bg-card border border-border p-6 rounded-lg">
-          <h3 className="font-heading text-lg font-bold uppercase tracking-wider mb-4 text-foreground">Recent Orders</h3>
+          <h3 className="font-heading text-lg font-bold uppercase tracking-wider mb-4 text-foreground">Recent Orders & Appts</h3>
           <div className="space-y-3">
-            {orders.slice(0, 5).map(order => (
+            {combinedRecent.slice(0, 5).map(order => (
               <div key={order.id} className="flex items-center justify-between py-2 border-b border-border last:border-0">
                 <div>
-                  <p className="font-body text-sm font-semibold text-foreground">{order.order_number}</p>
-                  <p className="font-body text-xs text-muted-foreground">{order.customer_name}</p>
+                  <p className="font-body text-sm font-semibold text-foreground">{order.number}</p>
+                  <p className="font-body text-xs text-muted-foreground">{order.customer}</p>
                 </div>
                 <div className="text-right">
-                  <p className="font-body text-sm font-bold text-primary">RM {Number(order.total).toFixed(2)}</p>
+                  <p className="font-body text-sm font-bold text-primary">RM {order.total.toFixed(2)}</p>
                   <span className={`inline-block px-2 py-0.5 text-xs font-body font-semibold rounded-full uppercase ${statusColors[order.status] || ''}`}>{order.status}</span>
                 </div>
               </div>

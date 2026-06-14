@@ -35,7 +35,7 @@ export const printInvoice = (order: DbOrder) => {
 </head>
 <body>
   <div class="header">
-    <div class="logo">Bright Beam</div>
+    <div class="logo">SJ Tinted Shop</div>
     <div class="invoice-title">
       <h2>Invoice</h2>
       <p>${order.order_number} · ${new Date(order.created_at).toLocaleDateString('en-GB')}</p>
@@ -79,7 +79,7 @@ export const printInvoice = (order: DbOrder) => {
     <div class="row total-row"><span>Total:</span><span>${Number(order.total).toFixed(2)} RM</span></div>
   </div>
   <div class="footer">
-    <p>Thank you for shopping with Bright Beam · Malaysia</p>
+    <p>Thank you for choosing SJ Tinted Shop</p>
   </div>
 </body>
 </html>`;
@@ -120,7 +120,7 @@ export const printCourierSlip = (order: DbOrder) => {
 <body>
   <div class="slip">
     <div class="slip-header">
-      <h1>Bright Beam</h1>
+      <h1>SJ Tinted Shop</h1>
       <p>Courier Delivery Slip</p>
     </div>
     <div class="order-num">${order.order_number}</div>

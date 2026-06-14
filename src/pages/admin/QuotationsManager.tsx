@@ -81,7 +81,7 @@ const QuotationsManager = () => {
     toast.success('Email address copied!');
     
     const subject = encodeURIComponent(`Quotation: ${quotation.company_name}`);
-    const body = encodeURIComponent(`Dear ${quotation.customer_name},\n\nWe have prepared your quotation. Please check the attachment.\n\nTotal: RM ${Number(quotation.cart_total).toFixed(2)}\n\nBest regards,\nBright Beam Team`);
+    const body = encodeURIComponent(`Dear ${quotation.customer_name},\n\nWe have prepared your quotation. Please check the attachment.\n\nTotal: RM ${Number(quotation.cart_total).toFixed(2)}\n\nBest regards,\nSJ Tinted Shop Team`);
     
     // Open directly in Gmail (Web)
     const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${quotation.customer_email}&su=${subject}&body=${body}`;

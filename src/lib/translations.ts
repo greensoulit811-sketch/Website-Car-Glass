@@ -28,7 +28,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'new.title': 'New Arrivals',
 
     // Why Choose Us
-    'why.label': 'The Bright Beam Difference',
+    'why.label': 'The SJ Tinted Shop Difference',
     'why.title': 'Why Tech Lovers Choose Us',
     'why.authentic': '100% Genuine',
     'why.authentic_desc': 'Every machine verified original. Directly from authorized distributors.',
@@ -72,7 +72,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'product.color': 'Color',
     'product.add_to_cart': 'Add to Cart',
     'product.buy_now': 'Buy Now',
-    'product.authentic': '100% Authentic - Verified by Bright Beam',
+    'product.authentic': '100% Authentic - Verified by SJ Tinted Shop',
     'product.free_delivery': 'Free delivery across Malaysia on orders over RM 150',
     'product.return_policy': '30-day easy return policy',
     'product.cod': 'Cash on Delivery available',
@@ -175,7 +175,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'new.title': 'নতুন পণ্য',
 
     // Why Choose Us
-    'why.label': 'Bright Beam এর বিশেষত্ব',
+    'why.label': 'SJ Tinted Shop এর বিশেষত্ব',
     'why.title': 'কেন আমাদের বেছে নেবেন',
     'why.authentic': '১০০% অরিজিনাল',
     'why.authentic_desc': 'প্রতিটি ল্যাপটপ যাচাই করা আসল। সরাসরি অথোরাইজড সোর্স থেকে আনি।',
@@ -219,7 +219,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'product.color': 'রঙ',
     'product.add_to_cart': 'কার্টে যোগ করুন',
     'product.buy_now': 'অর্ডার করুন',
-    'product.authentic': '১০০% অরিজিনাল - Bright Beam যাচাইকৃত',
+    'product.authentic': '১০০% অরিজিনাল - SJ Tinted Shop যাচাইকৃত',
     'product.free_delivery': 'সারা দেশে ফ্রি ডেলিভারি',
     'product.return_policy': '৩০ দিনের সহজ রিটার্ন নীতি',
     'product.cod': 'ক্যাশ অন ডেলিভারি সুবিধা আছে',
