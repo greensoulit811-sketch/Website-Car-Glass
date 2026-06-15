@@ -10,8 +10,8 @@ import { MapPin, Phone, ArrowLeft, ArrowRight, CheckCircle2, ChevronRight, Chevr
 
 // Hardcoded data for demonstration based on screenshots
 const LOCATIONS = [
-  { id: 'batu_caves', title: 'Batu Caves', address: '13, Jln Setia Gemilang BG U13/BG, 40170 Shah Alam, Selangor' },
-  { id: 'setia_alam', title: 'Setia Alam', address: '13, Jln Setia Gemilang BG U13/BG, 40170 Shah Alam, Selangor' }
+  { id: 'batu_caves', title: 'Selangor', address: '13, Jln Setia Gemilang BG U13/BG, 40170 Shah Alam, Selangor' },
+  { id: 'setia_alam', title: 'Selangor', address: '13, Jln Setia Gemilang BG U13/BG, 40170 Shah Alam, Selangor' }
 ];
 
 const CATEGORIES = [
@@ -186,7 +186,7 @@ export default function AppointmentPage() {
       {/* Hero Banner */}
       <div className="relative h-[250px] md:h-[350px] w-full bg-[#1a1f2e] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-black/60 z-10" />
-        <img src={appointmentBanner?.image_url || "/placeholder.svg"} alt="Appointment" className="absolute inset-0 w-full h-full object-cover opacity-50 blur-[2px]" />
+        <img src={appointmentBanner?.image_url || "/placeholder.svg"} alt="Appointment" className="absolute inset-0 w-full h-full object-cover opacity-100 blur-[2px]" />
         <h1 className="relative z-20 text-4xl md:text-5xl font-black text-white tracking-widest uppercase text-center px-4">
           {appointmentBanner?.title || 'Appointment'}
         </h1>
@@ -197,7 +197,7 @@ export default function AppointmentPage() {
         )}
       </div>
 
-      <div className="container mx-auto px-4 py-16 md:py-24">
+      <div className="container mx-auto px-4 py-16 md:py-20">
         {completed ? (
           <div className="max-w-2xl mx-auto bg-white rounded-lg p-12 text-center shadow-2xl">
             <CheckCircle2 className="w-20 h-20 text-[#00d5b4] mx-auto mb-6" />

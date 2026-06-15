@@ -316,19 +316,19 @@ const Index = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             
             {/* Left Collage Images */}
-            <div className="relative h-[600px] w-full hidden lg:block">
+            <div className="relative h-[350px] sm:h-[450px] lg:h-[600px] w-full block mb-10 lg:mb-0">
               {whyData.images[0] && (
-                <div className="absolute top-0 left-0 w-[55%] h-[280px] rounded overflow-hidden shadow-2xl z-10 border-4 border-[#111827]">
+                <div className="absolute top-0 left-0 w-[55%] h-[160px] sm:h-[220px] lg:h-[280px] rounded overflow-hidden shadow-2xl z-10 border-4 border-[#111827]">
                   <img src={whyData.images[0]} className="w-full h-full object-cover" alt="Service 1" />
                 </div>
               )}
               {whyData.images[1] && (
-                <div className="absolute bottom-12 left-8 w-[50%] h-[240px] rounded overflow-hidden shadow-2xl z-30 border-4 border-[#111827]">
+                <div className="absolute bottom-4 lg:bottom-12 left-4 lg:left-8 w-[50%] h-[150px] sm:h-[200px] lg:h-[240px] rounded overflow-hidden shadow-2xl z-30 border-4 border-[#111827]">
                   <img src={whyData.images[1]} className="w-full h-full object-cover" alt="Service 2" />
                 </div>
               )}
               {whyData.images[2] && (
-                <div className="absolute top-[120px] right-0 w-[55%] h-[320px] rounded overflow-hidden shadow-2xl z-20 border-4 border-[#111827]">
+                <div className="absolute top-[80px] sm:top-[100px] lg:top-[120px] right-0 w-[55%] h-[200px] sm:h-[260px] lg:h-[320px] rounded overflow-hidden shadow-2xl z-20 border-4 border-[#111827]">
                   <img src={whyData.images[2]} className="w-full h-full object-cover" alt="Service 3" />
                 </div>
               )}
