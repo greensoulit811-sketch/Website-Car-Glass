@@ -165,14 +165,14 @@ export default function AppointmentPage() {
   const renderSidebarContext = () => {
     switch (step) {
       case 1:
-        return { title: 'Location Selections', desc: 'Please select a location for your appointment', icon: <MapPin className="w-10 h-10 text-[#00d5b4]" /> };
+        return { title: 'Location Selections', desc: 'Please select a location for your appointment', icon: <MapPin className="w-10 h-10 text-[#F59E0B]" /> };
       case 2:
       case 3:
-        return { title: 'Service Selection', desc: 'Please select a service for which you want to schedule an appointment', icon: <RefreshCw className="w-10 h-10 text-[#00d5b4]" /> };
+        return { title: 'Service Selection', desc: 'Please select a service for which you want to schedule an appointment', icon: <RefreshCw className="w-10 h-10 text-[#F59E0B]" /> };
       case 4:
-        return { title: 'Select Date & Time', desc: 'Please select date and time for your appointment', icon: <CalendarIcon className="w-10 h-10 text-[#00d5b4]" /> };
+        return { title: 'Select Date & Time', desc: 'Please select date and time for your appointment', icon: <CalendarIcon className="w-10 h-10 text-[#F59E0B]" /> };
       case 5:
-        return { title: 'Enter Your Information', desc: 'Please enter your contact information', icon: <User className="w-10 h-10 text-[#00d5b4]" /> };
+        return { title: 'Enter Your Information', desc: 'Please enter your contact information', icon: <User className="w-10 h-10 text-[#F59E0B]" /> };
       default: return null;
     }
   };
@@ -200,14 +200,14 @@ export default function AppointmentPage() {
       <div className="container mx-auto px-4 py-16 md:py-20">
         {completed ? (
           <div className="max-w-2xl mx-auto bg-white rounded-lg p-12 text-center shadow-2xl">
-            <CheckCircle2 className="w-20 h-20 text-[#00d5b4] mx-auto mb-6" />
+            <CheckCircle2 className="w-20 h-20 text-[#F59E0B] mx-auto mb-6" />
             <h2 className="text-3xl font-black text-black mb-4">Booking Confirmed!</h2>
             <p className="text-gray-600 mb-8">
               Thank you, {userInfo.firstName}! Your appointment for <strong>{service?.title}</strong> on <strong>{date?.toLocaleDateString()} at {time}</strong> at our <strong>{location?.title}</strong> branch has been received.
             </p>
             <button 
               onClick={() => window.location.href = '/'}
-              className="bg-[#00d5b4] text-black font-bold uppercase tracking-widest px-8 py-3 rounded hover:bg-black hover:text-white transition-colors"
+              className="bg-[#F59E0B] text-black font-bold uppercase tracking-widest px-8 py-3 rounded hover:bg-black hover:text-white transition-colors"
             >
               Return Home
             </button>
@@ -249,7 +249,7 @@ export default function AppointmentPage() {
                           <div 
                             key={loc.id} 
                             onClick={() => { setLocation(loc); handleNext(); }}
-                            className={`border rounded-lg p-4 flex gap-4 cursor-pointer transition-all ${location?.id === loc.id ? 'border-[#00d5b4] bg-green-50/50' : 'border-gray-200 hover:border-gray-300'}`}
+                            className={`border rounded-lg p-4 flex gap-4 cursor-pointer transition-all ${location?.id === loc.id ? 'border-[#F59E0B] bg-green-50/50' : 'border-gray-200 hover:border-gray-300'}`}
                           >
                             <div className="w-16 h-16 rounded bg-gray-100 flex items-center justify-center shrink-0">
                               <MapPin className="w-6 h-6 text-gray-400" />
@@ -273,7 +273,7 @@ export default function AppointmentPage() {
                           <div 
                             key={cat.id} 
                             onClick={() => { setCategory(cat); handleNext(); }}
-                            className={`border rounded-lg p-4 flex items-center justify-between cursor-pointer transition-all ${category?.id === cat.id ? 'border-[#00d5b4] bg-green-50/50' : 'border-gray-200 hover:border-gray-300'}`}
+                            className={`border rounded-lg p-4 flex items-center justify-between cursor-pointer transition-all ${category?.id === cat.id ? 'border-[#F59E0B] bg-green-50/50' : 'border-gray-200 hover:border-gray-300'}`}
                           >
                             <div className="flex items-center gap-4">
                               <div className="w-12 h-12 rounded bg-gray-100 flex items-center justify-center shrink-0">
@@ -281,7 +281,7 @@ export default function AppointmentPage() {
                               </div>
                               <h4 className="font-bold text-sm text-black">{cat.title}</h4>
                             </div>
-                            <span className="text-xs text-[#00d5b4] font-medium">{cat.count}</span>
+                            <span className="text-xs text-[#F59E0B] font-medium">{cat.count}</span>
                           </div>
                         ))}
                       </div>
@@ -297,7 +297,7 @@ export default function AppointmentPage() {
                           <div 
                             key={svc.id} 
                             onClick={() => { setService(svc); handleNext(); }}
-                            className={`border rounded-lg p-4 flex gap-4 cursor-pointer transition-all ${service?.id === svc.id ? 'border-[#00d5b4] bg-green-50/50 shadow-md' : 'border-gray-200 hover:border-gray-300'}`}
+                            className={`border rounded-lg p-4 flex gap-4 cursor-pointer transition-all ${service?.id === svc.id ? 'border-[#F59E0B] bg-green-50/50 shadow-md' : 'border-gray-200 hover:border-gray-300'}`}
                           >
                             <div className="w-12 h-12 rounded bg-[#0a0f1a] flex items-center justify-center shrink-0 text-white font-bold text-xs">
                               PRO
@@ -305,7 +305,7 @@ export default function AppointmentPage() {
                             <div className="flex-1">
                               <div className="flex justify-between items-start mb-2">
                                 <h4 className="font-bold text-sm text-black">{svc.title}</h4>
-                                <span className="text-[#00d5b4] font-bold text-sm">RM{svc.price}</span>
+                                <span className="text-[#F59E0B] font-bold text-sm">RM{svc.price}</span>
                               </div>
                               <p className="text-xs text-gray-500 whitespace-pre-wrap leading-relaxed">{svc.description}</p>
                             </div>
@@ -351,7 +351,7 @@ export default function AppointmentPage() {
                                       onClick={() => setDate(cellDate)}
                                       className={`p-2 rounded transition-colors ${
                                         isSelected 
-                                          ? 'bg-[#00d5b4] text-white font-bold' 
+                                          ? 'bg-[#F59E0B] text-white font-bold' 
                                           : isPast 
                                             ? 'text-gray-300 cursor-not-allowed' 
                                             : 'hover:bg-gray-100 text-black font-medium'
@@ -377,7 +377,7 @@ export default function AppointmentPage() {
                                       isPast 
                                         ? 'bg-gray-100 text-gray-400 cursor-not-allowed opacity-50'
                                         : time === t 
-                                          ? 'bg-[#00d5b4] text-white' 
+                                          ? 'bg-[#F59E0B] text-white' 
                                           : 'bg-green-50 text-green-700 hover:bg-green-100'
                                     }`}
                                   >
@@ -391,7 +391,7 @@ export default function AppointmentPage() {
                               <button 
                                 onClick={handleNext}
                                 disabled={!date || !time}
-                                className="bg-[#00d5b4] text-white px-6 py-2 rounded text-sm font-bold disabled:opacity-50"
+                                className="bg-[#F59E0B] text-white px-6 py-2 rounded text-sm font-bold disabled:opacity-50"
                               >
                                 Next 
                               </button>
@@ -403,40 +403,40 @@ export default function AppointmentPage() {
                           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
                             <div className="flex justify-between items-center mb-6 border-b pb-4">
                               <h3 className="text-lg font-black text-black">Your Information</h3>
-                              <button className="text-xs text-[#00d5b4] font-bold">Logout</button>
+                              <button className="text-xs text-[#F59E0B] font-bold">Logout</button>
                             </div>
-                            <h4 className="text-sm font-bold text-[#00d5b4] mb-4 border-b pb-2 inline-block">Contact Information</h4>
+                            <h4 className="text-sm font-bold text-[#F59E0B] mb-4 border-b pb-2 inline-block">Contact Information</h4>
                             
                             <div className="space-y-5">
                               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                                 <div>
                                   <label className="text-xs font-bold text-gray-500 mb-1.5 block uppercase tracking-wider">First Name</label>
-                                  <input type="text" value={userInfo.firstName} onChange={e => setUserInfo({...userInfo, firstName: e.target.value})} className="w-full border border-gray-200 rounded-lg p-3 text-sm focus:ring-2 focus:ring-[#00d5b4] focus:border-transparent outline-none bg-gray-50/50 transition-all font-medium" placeholder="Plato" />
+                                  <input type="text" value={userInfo.firstName} onChange={e => setUserInfo({...userInfo, firstName: e.target.value})} className="w-full border border-gray-200 rounded-lg p-3 text-sm focus:ring-2 focus:ring-[#F59E0B] focus:border-transparent outline-none bg-gray-50/50 transition-all font-medium" placeholder="Plato" />
                                 </div>
                                 <div>
                                   <label className="text-xs font-bold text-gray-500 mb-1.5 block uppercase tracking-wider">Last Name</label>
-                                  <input type="text" value={userInfo.lastName} onChange={e => setUserInfo({...userInfo, lastName: e.target.value})} className="w-full border border-gray-200 rounded-lg p-3 text-sm focus:ring-2 focus:ring-[#00d5b4] focus:border-transparent outline-none bg-gray-50/50 transition-all font-medium" placeholder="Farley" />
+                                  <input type="text" value={userInfo.lastName} onChange={e => setUserInfo({...userInfo, lastName: e.target.value})} className="w-full border border-gray-200 rounded-lg p-3 text-sm focus:ring-2 focus:ring-[#F59E0B] focus:border-transparent outline-none bg-gray-50/50 transition-all font-medium" placeholder="Farley" />
                                 </div>
                               </div>
                               <div>
                                 <label className="text-xs font-bold text-gray-500 mb-1.5 block uppercase tracking-wider">Phone Number</label>
-                                <input type="text" value={userInfo.phone} onChange={e => setUserInfo({...userInfo, phone: e.target.value})} className="w-full border border-gray-200 rounded-lg p-3 text-sm focus:ring-2 focus:ring-[#00d5b4] focus:border-transparent outline-none bg-gray-50/50 transition-all font-medium" placeholder="+60 14-744 9356" />
+                                <input type="text" value={userInfo.phone} onChange={e => setUserInfo({...userInfo, phone: e.target.value})} className="w-full border border-gray-200 rounded-lg p-3 text-sm focus:ring-2 focus:ring-[#F59E0B] focus:border-transparent outline-none bg-gray-50/50 transition-all font-medium" placeholder="+60 14-744 9356" />
                               </div>
                               <div>
                                 <label className="text-xs font-bold text-gray-500 mb-1.5 block uppercase tracking-wider">Email Address</label>
-                                <input type="email" value={userInfo.email} onChange={e => setUserInfo({...userInfo, email: e.target.value})} className="w-full border border-gray-200 rounded-lg p-3 text-sm focus:ring-2 focus:ring-[#00d5b4] focus:border-transparent outline-none bg-gray-50/50 transition-all font-medium" placeholder="email@example.com" />
+                                <input type="email" value={userInfo.email} onChange={e => setUserInfo({...userInfo, email: e.target.value})} className="w-full border border-gray-200 rounded-lg p-3 text-sm focus:ring-2 focus:ring-[#F59E0B] focus:border-transparent outline-none bg-gray-50/50 transition-all font-medium" placeholder="email@example.com" />
                               </div>
                               <div>
                                 <label className="text-xs font-bold text-gray-500 mb-1.5 block uppercase tracking-wider">Car Model</label>
-                                <input type="text" value={userInfo.carModel} onChange={e => setUserInfo({...userInfo, carModel: e.target.value})} className="w-full border border-gray-200 rounded-lg p-3 text-sm focus:ring-2 focus:ring-[#00d5b4] focus:border-transparent outline-none bg-gray-50/50 transition-all font-medium" placeholder="Honda Civic" />
+                                <input type="text" value={userInfo.carModel} onChange={e => setUserInfo({...userInfo, carModel: e.target.value})} className="w-full border border-gray-200 rounded-lg p-3 text-sm focus:ring-2 focus:ring-[#F59E0B] focus:border-transparent outline-none bg-gray-50/50 transition-all font-medium" placeholder="Honda Civic" />
                               </div>
                               <div>
                                 <label className="text-xs font-bold text-gray-500 mb-1.5 block uppercase tracking-wider">Number Plate</label>
-                                <input type="text" value={userInfo.numberPlate} onChange={e => setUserInfo({...userInfo, numberPlate: e.target.value})} className="w-full border border-gray-200 rounded-lg p-3 text-sm focus:ring-2 focus:ring-[#00d5b4] focus:border-transparent outline-none bg-gray-50/50 transition-all font-medium" placeholder="VBA 1234" />
+                                <input type="text" value={userInfo.numberPlate} onChange={e => setUserInfo({...userInfo, numberPlate: e.target.value})} className="w-full border border-gray-200 rounded-lg p-3 text-sm focus:ring-2 focus:ring-[#F59E0B] focus:border-transparent outline-none bg-gray-50/50 transition-all font-medium" placeholder="VBA 1234" />
                               </div>
                               <div>
                                 <label className="text-xs font-bold text-gray-500 mb-1.5 block uppercase tracking-wider">Note</label>
-                                <textarea value={userInfo.note} onChange={e => setUserInfo({...userInfo, note: e.target.value})} className="w-full border border-gray-200 rounded-lg p-3 text-sm h-24 resize-none focus:ring-2 focus:ring-[#00d5b4] focus:border-transparent outline-none bg-gray-50/50 transition-all font-medium" placeholder="Any special requests?"></textarea>
+                                <textarea value={userInfo.note} onChange={e => setUserInfo({...userInfo, note: e.target.value})} className="w-full border border-gray-200 rounded-lg p-3 text-sm h-24 resize-none focus:ring-2 focus:ring-[#F59E0B] focus:border-transparent outline-none bg-gray-50/50 transition-all font-medium" placeholder="Any special requests?"></textarea>
                               </div>
                             </div>
                             
@@ -447,7 +447,7 @@ export default function AppointmentPage() {
                               <button 
                                 onClick={handleSubmit}
                                 disabled={loading}
-                                className="w-full sm:w-auto bg-[#00d5b4] text-black px-10 py-3.5 rounded-lg text-sm font-black uppercase tracking-wider flex items-center justify-center gap-2 disabled:opacity-50 hover:bg-[#00bda0] transition-colors shadow-lg shadow-[#00d5b4]/20"
+                                className="w-full sm:w-auto bg-[#F59E0B] text-black px-10 py-3.5 rounded-lg text-sm font-black uppercase tracking-wider flex items-center justify-center gap-2 disabled:opacity-50 hover:bg-[#00bda0] transition-colors shadow-lg shadow-[#F59E0B]/20"
                               >
                                 {loading ? 'Processing...' : 'Checkout ->'}
                               </button>
@@ -461,7 +461,7 @@ export default function AppointmentPage() {
                         <div>
                           <div className="flex justify-between items-center border-b pb-4 mb-6">
                             <h3 className="font-black text-black">Summary</h3>
-                            {step === 5 && <span className="text-[#00d5b4] text-xs font-bold cursor-pointer">Checkout -&gt;</span>}
+                            {step === 5 && <span className="text-[#F59E0B] text-xs font-bold cursor-pointer">Checkout -&gt;</span>}
                           </div>
                           
                           <div className="space-y-4">
@@ -477,13 +477,13 @@ export default function AppointmentPage() {
                               <>
                                 <div className="flex justify-between text-xs">
                                   <span className="text-gray-500">Location</span>
-                                  <span className="font-bold text-black flex items-center gap-1">{location?.title} <span className="text-[#00d5b4] cursor-pointer" onClick={() => setStep(1)}><ArrowLeft className="w-3 h-3 rotate-45" /></span></span>
+                                  <span className="font-bold text-black flex items-center gap-1">{location?.title} <span className="text-[#F59E0B] cursor-pointer" onClick={() => setStep(1)}><ArrowLeft className="w-3 h-3 rotate-45" /></span></span>
                                 </div>
                                 <div className="flex justify-between text-xs">
                                   <span className="text-gray-500">Customer</span>
                                   <span className="font-bold text-black">{userInfo.firstName} {userInfo.lastName}</span>
                                 </div>
-                                <div className="text-[#00d5b4] text-xs font-bold cursor-pointer text-right">+ Add More</div>
+                                <div className="text-[#F59E0B] text-xs font-bold cursor-pointer text-right">+ Add More</div>
                               </>
                             )}
                           </div>
@@ -535,7 +535,7 @@ export default function AppointmentPage() {
             {/* Left Side */}
             <div className="flex flex-col justify-center items-center py-10 text-center">
               <span className="text-white font-bold text-sm tracking-wide mb-1">Any Emergency Help ? Call Us</span>
-              <span className="text-[#00d5b4] font-black text-2xl md:text-3xl tracking-widest">{whyData.emergencyPhone}</span>
+              <span className="text-[#F59E0B] font-black text-2xl md:text-3xl tracking-widest">{whyData.emergencyPhone}</span>
             </div>
             
             {/* Right Side */}

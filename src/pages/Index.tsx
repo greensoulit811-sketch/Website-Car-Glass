@@ -148,15 +148,15 @@ const Index = () => {
 
   const renderTitle = (title?: string) => {
     if (!title) return (
-      <>PREMIUM CAR <span className="text-[#00d5b4]">TINTING AND</span> <br className="hidden md:block" />
-      <span className="text-[#00d5b4]">ACCESSORIES</span> SERVICE</>
+      <>PREMIUM CAR <span className="text-[#F59E0B]">TINTING AND</span> <br className="hidden md:block" />
+      <span className="text-[#F59E0B]">ACCESSORIES</span> SERVICE</>
     );
     
     // Support **text** or *text* for teal color, and \n for line breaks
     const parts = title.split(/(\*[^*]+\*)/g);
     return parts.map((part, i) => {
       if (part.startsWith('*') && part.endsWith('*')) {
-        return <span key={i} className="text-[#00d5b4]">{part.slice(1, -1)}</span>;
+        return <span key={i} className="text-[#F59E0B]">{part.slice(1, -1)}</span>;
       }
       return <span key={i}>{part.split('\\n').map((line, j, arr) => (
         <span key={j}>
@@ -172,7 +172,7 @@ const Index = () => {
       <Navbar />
 
       {/* Static Hero Section */}
-      <section className="relative w-full min-h-[90vh] bg-[#111827] flex flex-col md:justify-center pb-0 md:pb-32 pt-28">
+      <section className="relative w-full min-h-[65vh] bg-[#111827] flex flex-col md:justify-center pb-0 md:pb-32 pt-28">
         {/* Background Image with Dark Overlay */}
         <div className="absolute inset-0 z-0 bg-[#111827]">
           <AnimatePresence mode="wait">
@@ -189,7 +189,7 @@ const Index = () => {
         </div>
 
         <div className="container mx-auto px-4 lg:px-8 relative z-10 text-center flex flex-col items-center flex-1 justify-center py-12 md:py-0">
-          <span className="text-[#00d5b4] text-[13px] font-bold tracking-widest mb-6">WHO WE ARE ?</span>
+          <span className="text-[#F59E0B] text-[13px] font-bold tracking-widest mb-6">WHO WE ARE ?</span>
           
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-black text-white uppercase leading-[1.2] mb-8  tracking-widest" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
             {renderTitle(heroBanners.length > 0 ? heroBanners[currentBanner].title : undefined)}
@@ -201,7 +201,7 @@ const Index = () => {
               : "We're the trusted tinting experts in Malaysia. With years of experience, we deliver exceptional car tinting solutions. Discover our commitment to superior quality and innovation today. Experience optimum heat protection for your vehicle."}
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-8 mb-14">
+          {/* <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-8 mb-14">
             <div className="flex items-center gap-3 bg-[#1a2336]/60 backdrop-blur-sm px-6 py-3.5 rounded border border-gray-700/50 w-full sm:w-auto justify-center">
               <Users className="text-white w-5 h-5 shrink-0" />
               <span className="text-white text-sm font-bold tracking-wide">Professional & Creative Staff</span>
@@ -210,10 +210,10 @@ const Index = () => {
               <ShieldCheck className="text-white w-5 h-5 shrink-0" />
               <span className="text-white text-sm font-bold tracking-wide">Warranties & Guarantees</span>
             </div>
-          </div>
+          </div> */}
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-5 mb-10 md:mb-0 w-full sm:w-auto">
-            <Link to="/appointment" className="w-full sm:w-auto bg-[#00d5b4] text-black font-black uppercase tracking-widest text-[13px] px-10 py-4 hover:bg-[#00c0a0] transition-colors rounded-sm shadow-lg shadow-[#00d5b4]/20">
+            <Link to="/appointment" className="w-full sm:w-auto bg-[#F59E0B] text-black font-black uppercase tracking-widest text-[13px] px-10 py-4 hover:bg-[#D97706] transition-colors rounded-sm shadow-lg shadow-[#F59E0B]/20">
               BOOK APPOINTMENT
             </Link>
             <a href="tel:+60103660467" className="w-full sm:w-auto flex items-center justify-center gap-3 border border-gray-600 bg-transparent text-white font-bold text-[13px] tracking-widest px-10 py-4 hover:bg-white/5 transition-colors rounded-sm">
@@ -224,14 +224,14 @@ const Index = () => {
         </div>
 
         {/* Info Cards */}
-        <div className="relative md:absolute left-0 right-0 md:-bottom-16 z-20 w-full">
+        <div className="relative md:absolute left-0 right-0 md:-bottom-28 z-20 w-full">
           <div className="container mx-auto px-4 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-0 max-w-4xl mx-auto shadow-2xl">
               <div className="bg-[#1e2434] p-10 lg:p-12 text-center md:text-left border-r border-gray-800/50">
                 <h3 className="text-white font-black text-lg mb-3 tracking-wide">Expertise & Professional</h3>
                 <p className="text-gray-400 text-xs leading-relaxed font-medium">Experience optimum heat protection for your vehicle.</p>
               </div>
-              <div className="bg-[#00d5b4] p-10 lg:p-12 text-center md:text-left transform md:scale-105 shadow-xl z-10">
+              <div className="bg-[#F59E0B] p-10 lg:p-12 text-center md:text-left transform md:scale-105 shadow-xl z-10">
                 <h3 className="text-black font-black text-lg mb-3 tracking-wide">24/7 Ready Support</h3>
                 <p className="text-gray-800 text-xs leading-relaxed font-medium">Experience optimum heat protection for your vehicle.</p>
               </div>
@@ -246,13 +246,13 @@ const Index = () => {
 
 
       {/* Our Tinting Services */}
-      <section className="py-20 lg:py-28 bg-[#111827]">
+      <section className="py-20 lg:py-40 bg-[#111827]">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 border-b border-gray-800 pb-12">
             <div className="max-w-2xl">
-              <span className="text-[#00d5b4] text-[11px] font-bold tracking-widest uppercase mb-4 block">OUR TINTING SERVICES</span>
-              <h2 className="text-3xl md:text-5xl font-black text-white uppercase leading-tight" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-                Delivering <span className="text-[#00d5b4]">Superior</span> Car Tinting<br/>Solution
+              <span className="text-[#F59E0B] text-[11px] font-bold tracking-widest uppercase mb-4 block">OUR TINTING SERVICES</span>
+              <h2 className="text-3xl md:text-4xl font-black text-white uppercase leading-tight" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+                Delivering <span className="text-[#F59E0B]">Superior</span> Car Tinting<br/>Solution
               </h2>
             </div>
             <div className="max-w-sm mt-6 md:mt-0 text-gray-400 text-xs leading-relaxed font-medium">
@@ -267,7 +267,7 @@ const Index = () => {
           </div>
           
           <div className="text-center">
-            <Link to="/contact" className="inline-block bg-[#00d5b4] text-black font-black uppercase tracking-widest text-[13px] px-10 py-4 hover:bg-white transition-colors rounded-sm shadow-lg shadow-[#00d5b4]/20">
+            <Link to="/contact" className="inline-block bg-[#F59E0B] text-black font-black uppercase tracking-widest text-[13px] px-10 py-4 hover:bg-white transition-colors rounded-sm shadow-lg shadow-[#F59E0B]/20">
               SEE OUR FULL TINT SERVICES
             </Link>
           </div>
@@ -294,7 +294,7 @@ const Index = () => {
               {/* Left Side (Aligns above collage) */}
               <div className="flex flex-col justify-center items-center py-10 text-center">
                 <span className="text-white font-bold text-sm tracking-wide mb-1">Any Emergency Help ? Call Us</span>
-                <span className="text-[#00d5b4] font-black text-2xl md:text-3xl tracking-widest">{whyData.emergencyPhone}</span>
+                <span className="text-[#F59E0B] font-black text-2xl md:text-3xl tracking-widest">{whyData.emergencyPhone}</span>
               </div>
               
               {/* Right Side (Aligns above text) */}
@@ -336,7 +336,7 @@ const Index = () => {
 
             {/* Right Content */}
             <div className="container mx-auto px-4 lg:px-8">
-              <span className="text-[#00d5b4] text-[11px] font-bold tracking-widest uppercase mb-4 block">WHY CHOOSE US ?</span>
+              <span className="text-[#F59E0B] text-[11px] font-bold tracking-widest uppercase mb-4 block">WHY CHOOSE US ?</span>
               <h2 className="text-3xl md:text-5xl font-black text-white leading-tight mb-6 tracking-wide uppercase" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
                 {whyData.title}
               </h2>
@@ -349,8 +349,8 @@ const Index = () => {
                   const Icon = IconMap[feature.icon] || Star;
                   return (
                     <div key={idx} className="flex gap-5">
-                      <div className="w-14 h-14 shrink-0 bg-[#00d5b4]/10 rounded flex items-center justify-center border border-[#00d5b4]/20">
-                        <Icon className="w-6 h-6 text-[#00d5b4]" />
+                      <div className="w-14 h-14 shrink-0 bg-[#F59E0B]/10 rounded flex items-center justify-center border border-[#F59E0B]/20">
+                        <Icon className="w-6 h-6 text-[#F59E0B]" />
                       </div>
                       <div>
                         <h3 className="text-white font-bold text-lg mb-2">{feature.title}</h3>
@@ -366,42 +366,13 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Accessories Services */}
-      <section className="py-20 lg:py-28 bg-[#1e2434]">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 border-b border-gray-700 pb-12">
-            <div className="max-w-2xl">
-              <span className="text-[#00d5b4] text-[11px] font-bold tracking-widest uppercase mb-4 block">ACCESSORIES SERVICES</span>
-              <h2 className="text-3xl md:text-5xl font-black text-white uppercase leading-tight" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-                Delivering <span className="text-[#00d5b4]">Superior</span> Car Tinting &<br/>Protection <span className="text-[#00d5b4]">Solutions</span>
-              </h2>
-            </div>
-            <div className="max-w-sm mt-6 md:mt-0 text-gray-400 text-xs leading-relaxed font-medium">
-              We're the trusted tinting experts in Malaysia. With years of experience, we deliver exceptional tinting solutions for cars.
-            </div>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-6 mb-16">
-            {accessoriesProducts.map(product => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-          </div>
-          
-          <div className="text-center">
-            <Link to="/contact" className="inline-block bg-[#00d5b4] text-black font-black uppercase tracking-widest text-[13px] px-10 py-4 hover:bg-white transition-colors rounded-sm shadow-lg shadow-[#00d5b4]/20">
-              SEE OUR FULL ASSESORIES SERVICES
-            </Link>
-          </div>
-        </div>
-      </section>
-
       {/* Testimonial Section */}
       <section className="py-20 lg:py-28 bg-black">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="text-center mb-16">
-            <span className="text-[#00d5b4] text-[11px] font-bold tracking-widest uppercase mb-4 block">TESTIMONIAL</span>
+            <span className="text-[#F59E0B] text-[11px] font-bold tracking-widest uppercase mb-4 block">TESTIMONIAL</span>
             <h2 className="text-3xl md:text-5xl font-black text-white leading-tight" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-              What They Say <span className="text-[#00d5b4]">About Us</span> ?
+              What They Say <span className="text-[#F59E0B]">About Us</span> ?
             </h2>
           </div>
 
@@ -415,7 +386,7 @@ const Index = () => {
                 <div className="flex items-center gap-4 transition-all duration-500">
                   <img src={testimonialsList[currentTestimonial].authorImage} alt={testimonialsList[currentTestimonial].authorName} className="w-14 h-14 rounded-full object-cover bg-white" />
                   <div>
-                    <h4 className="text-[#00d5b4] font-black text-base tracking-wide mb-1">{testimonialsList[currentTestimonial].authorName}</h4>
+                    <h4 className="text-[#F59E0B] font-black text-base tracking-wide mb-1">{testimonialsList[currentTestimonial].authorName}</h4>
                     <span className="text-gray-400 text-[11px] font-medium">{testimonialsList[currentTestimonial].authorRole}</span>
                   </div>
                 </div>
@@ -427,7 +398,7 @@ const Index = () => {
                     <button 
                       key={idx} 
                       onClick={() => setCurrentTestimonial(idx)}
-                      className={`h-2 rounded-full transition-all duration-300 ${idx === currentTestimonial ? 'bg-[#00d5b4] w-8' : 'bg-gray-600 hover:bg-gray-500 w-2'}`}
+                      className={`h-2 rounded-full transition-all duration-300 ${idx === currentTestimonial ? 'bg-[#F59E0B] w-8' : 'bg-gray-600 hover:bg-gray-500 w-2'}`}
                       aria-label={`Go to testimonial ${idx + 1}`}
                     />
                   ))}
@@ -456,7 +427,7 @@ const Index = () => {
               <form onSubmit={handleContactSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="text-white text-sm font-medium mb-2 block">Number <span className="text-[#00d5b4]">*</span></label>
+                    <label className="text-white text-sm font-medium mb-2 block">Number <span className="text-[#F59E0B]">*</span></label>
                     <input 
                       type="text" 
                       placeholder="Your Number Here" 
@@ -467,7 +438,7 @@ const Index = () => {
                     />
                   </div>
                   <div>
-                    <label className="text-white text-sm font-medium mb-2 block">Email <span className="text-[#00d5b4]">*</span></label>
+                    <label className="text-white text-sm font-medium mb-2 block">Email <span className="text-[#F59E0B]">*</span></label>
                     <input 
                       type="email" 
                       placeholder="Your Email Here" 
@@ -489,7 +460,7 @@ const Index = () => {
                   />
                 </div>
                 <div>
-                  <label className="text-white text-sm font-medium mb-2 block">Message <span className="text-[#00d5b4]">*</span></label>
+                  <label className="text-white text-sm font-medium mb-2 block">Message <span className="text-[#F59E0B]">*</span></label>
                   <textarea 
                     placeholder="Input Message Here" 
                     rows={4}
@@ -502,7 +473,7 @@ const Index = () => {
                 <button 
                   type="submit" 
                   disabled={submittingContact}
-                  className="w-full bg-[#00d5b4] hover:bg-[#00c0a3] text-black font-black uppercase tracking-widest text-[13px] py-4 transition-colors flex items-center justify-center gap-2"
+                  className="w-full bg-[#F59E0B] hover:bg-[#D97706] text-black font-black uppercase tracking-widest text-[13px] py-4 transition-colors flex items-center justify-center gap-2"
                 >
                   <Send className="w-4 h-4" /> {submittingContact ? 'SENDING...' : 'SUBMIT NOW'}
                 </button>
@@ -511,7 +482,7 @@ const Index = () => {
 
             {/* Right: Info */}
             <div className="w-full md:w-[45%]">
-              <span className="text-[#00d5b4] text-[13px] font-bold tracking-widest uppercase mb-2 block">CONTACT US</span>
+              <span className="text-[#F59E0B] text-[13px] font-bold tracking-widest uppercase mb-2 block">CONTACT US</span>
               <h2 className="text-4xl md:text-5xl font-black text-white leading-tight mb-6" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
                 Get In Touch
               </h2>
@@ -521,18 +492,18 @@ const Index = () => {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-10">
                 <div>
-                  <h4 className="text-[#00d5b4] font-medium text-sm mb-3">Our Address</h4>
+                  <h4 className="text-[#F59E0B] font-medium text-sm mb-3">Our Address</h4>
                   <div className="flex items-start gap-3">
-                    <MapPin className="w-5 h-5 text-[#00d5b4] shrink-0 mt-0.5" />
+                    <MapPin className="w-5 h-5 text-[#F59E0B] shrink-0 mt-0.5" />
                     <p className="text-white text-sm leading-relaxed">
                       {settings?.contact_address || '119, Jln SBC 1, Taman Sri Batu Caves, 68100 Batu Caves, Selangor'}
                     </p>
                   </div>
                 </div>
                 <div>
-                  <h4 className="text-[#00d5b4] font-medium text-sm mb-3">Call Us</h4>
+                  <h4 className="text-[#F59E0B] font-medium text-sm mb-3">Call Us</h4>
                   <div className="flex items-start gap-3 mb-6">
-                    <Phone className="w-5 h-5 text-[#00d5b4] shrink-0" />
+                    <Phone className="w-5 h-5 text-[#F59E0B] shrink-0" />
                     <p className="text-white text-sm font-medium">
                       {settings?.contact_phone || '+60 11-6950 1634'}
                     </p>
@@ -540,16 +511,16 @@ const Index = () => {
                   
                   <div className="flex items-center gap-3">
                     {settings?.facebook_url && (
-                      <a href={settings.facebook_url} target="_blank" rel="noopener noreferrer" className="w-8 h-8 bg-[#00d5b4] rounded flex items-center justify-center hover:bg-white transition-colors">
+                      <a href={settings.facebook_url} target="_blank" rel="noopener noreferrer" className="w-8 h-8 bg-[#F59E0B] rounded flex items-center justify-center hover:bg-white transition-colors">
                         <Facebook className="w-4 h-4 text-black" />
                       </a>
                     )}
                     {settings?.instagram_url && (
-                      <a href={settings.instagram_url} target="_blank" rel="noopener noreferrer" className="w-8 h-8 bg-[#00d5b4] rounded flex items-center justify-center hover:bg-white transition-colors">
+                      <a href={settings.instagram_url} target="_blank" rel="noopener noreferrer" className="w-8 h-8 bg-[#F59E0B] rounded flex items-center justify-center hover:bg-white transition-colors">
                         <Instagram className="w-4 h-4 text-black" />
                       </a>
                     )}
-                    <a href="#" className="w-8 h-8 bg-[#00d5b4] rounded flex items-center justify-center hover:bg-white transition-colors">
+                    <a href="#" className="w-8 h-8 bg-[#F59E0B] rounded flex items-center justify-center hover:bg-white transition-colors">
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-black">
                         <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/>
                         <path d="M15 8a4 4 0 1 0 0-8c0 2.5 2 4.5 4.5 4.5V8a4 4 0 0 1-4-4"/>
@@ -560,10 +531,10 @@ const Index = () => {
               </div>
 
               <div className="flex flex-wrap items-center gap-4">
-                <a href="https://maps.app.goo.gl/XeihvznitHPvkU6bA" target="_blank" rel="noopener noreferrer" className="bg-transparent border border-[#00d5b4] text-[#00d5b4] hover:bg-[#00d5b4] hover:text-black font-black uppercase tracking-wider text-[12px] px-6 py-3 transition-colors flex items-center gap-2">
+                <a href="https://maps.app.goo.gl/XeihvznitHPvkU6bA" target="_blank" rel="noopener noreferrer" className="bg-transparent border border-[#F59E0B] text-[#F59E0B] hover:bg-[#F59E0B] hover:text-black font-black uppercase tracking-wider text-[12px] px-6 py-3 transition-colors flex items-center gap-2">
                   <MapPin className="w-4 h-4" /> GOOGLE MAP
                 </a>
-                <a href={`https://waze.com/ul?q=${encodeURIComponent(settings?.contact_address || 'Taman Sri Batu Caves')}`} target="_blank" rel="noopener noreferrer" className="bg-[#00d5b4] text-black hover:bg-white font-black uppercase tracking-wider text-[12px] px-6 py-3 transition-colors flex items-center gap-2">
+                <a href={`https://waze.com/ul?q=${encodeURIComponent(settings?.contact_address || 'Taman Sri Batu Caves')}`} target="_blank" rel="noopener noreferrer" className="bg-[#F59E0B] text-black hover:bg-white font-black uppercase tracking-wider text-[12px] px-6 py-3 transition-colors flex items-center gap-2">
                   <Navigation className="w-4 h-4" /> WAZE DIRECTION
                 </a>
               </div>

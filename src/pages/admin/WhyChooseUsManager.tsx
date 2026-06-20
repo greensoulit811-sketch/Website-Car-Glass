@@ -129,7 +129,7 @@ export default function WhyChooseUsManager() {
                 type="text" 
                 value={data.emergencyPhone}
                 onChange={e => setData({...data, emergencyPhone: e.target.value})}
-                className="w-full bg-background border border-border rounded px-4 py-2 text-sm text-foreground focus:border-[#00d5b4] focus:outline-none" 
+                className="w-full bg-background border border-border rounded px-4 py-2 text-sm text-foreground focus:border-[#F59E0B] focus:outline-none" 
               />
             </div>
             <div className="grid grid-cols-2 gap-4">
@@ -257,7 +257,7 @@ export default function WhyChooseUsManager() {
         <button 
           onClick={handleSave} 
           disabled={saving}
-          className="flex items-center gap-2 bg-[#00d5b4] text-black font-bold px-8 py-3 rounded hover:bg-opacity-90 disabled:opacity-50 text-lg shadow-lg"
+          className="flex items-center gap-2 bg-[#F59E0B] text-black font-bold px-8 py-3 rounded hover:bg-opacity-90 disabled:opacity-50 text-lg shadow-lg"
         >
           {saving ? 'Saving...' : <><Save className="w-5 h-5" /> Save Changes</>}
         </button>

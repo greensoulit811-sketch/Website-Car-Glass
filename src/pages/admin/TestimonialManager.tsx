@@ -194,7 +194,7 @@ export default function TestimonialManager() {
             <h2 className="text-xl font-bold text-foreground">Customer Testimonials</h2>
             <button 
               onClick={addTestimonial}
-              className="text-xs bg-[#00d5b4] text-black px-3 py-1.5 rounded flex items-center gap-1 font-bold"
+              className="text-xs bg-[#F59E0B] text-black px-3 py-1.5 rounded flex items-center gap-1 font-bold"
             >
               Add Testimonial
             </button>
@@ -291,7 +291,7 @@ export default function TestimonialManager() {
         <button 
           onClick={handleSave} 
           disabled={saving}
-          className="flex items-center gap-2 bg-[#00d5b4] text-black font-bold px-8 py-3 rounded hover:bg-opacity-90 disabled:opacity-50 text-lg shadow-lg"
+          className="flex items-center gap-2 bg-[#F59E0B] text-black font-bold px-8 py-3 rounded hover:bg-opacity-90 disabled:opacity-50 text-lg shadow-lg"
         >
           {saving ? 'Saving...' : <><Save className="w-5 h-5" /> Save Changes</>}
         </button>

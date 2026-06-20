@@ -108,7 +108,7 @@ export default function AppointmentsManager() {
                       </td>
                       <td className="px-6 py-4">
                         <div className="font-bold">{items?.service?.title || 'Unknown Service'}</div>
-                        <div className="text-[#00d5b4] text-xs font-bold">{formatDate(items?.date)} at {items?.time}</div>
+                        <div className="text-[#F59E0B] text-xs font-bold">{formatDate(items?.date)} at {items?.time}</div>
                       </td>
                       <td className="px-6 py-4 text-muted-foreground">
                         {items?.location || 'Unknown'}
@@ -128,7 +128,7 @@ export default function AppointmentsManager() {
                         <div className="flex items-center justify-end gap-2">
                           <button 
                             onClick={() => setViewingAppt(appt)}
-                            className="p-2 text-[#00d5b4] hover:bg-[#00d5b4]/10 rounded transition-colors"
+                            className="p-2 text-[#F59E0B] hover:bg-[#F59E0B]/10 rounded transition-colors"
                             title="View Details"
                           >
                             <Eye className="w-4 h-4" />
@@ -162,7 +162,7 @@ export default function AppointmentsManager() {
         <DialogContent className="sm:max-w-xl bg-card border border-border">
           <DialogHeader>
             <DialogTitle className="text-xl font-bold flex items-center gap-2">
-              <Calendar className="w-5 h-5 text-[#00d5b4]" /> Appointment Details
+              <Calendar className="w-5 h-5 text-[#F59E0B]" /> Appointment Details
             </DialogTitle>
             <DialogDescription>
               Booked on {viewingAppt ? new Date(viewingAppt.created_at).toLocaleString() : ''}
@@ -174,7 +174,7 @@ export default function AppointmentsManager() {
               <div className="grid grid-cols-2 gap-6 bg-muted/30 p-4 rounded-lg border border-border">
                 <div>
                   <h4 className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-1">Service & Time</h4>
-                  <p className="text-base font-bold text-[#00d5b4]">{viewingAppt.cart_items?.service?.title}</p>
+                  <p className="text-base font-bold text-[#F59E0B]">{viewingAppt.cart_items?.service?.title}</p>
                   <p className="text-sm">{formatDate(viewingAppt.cart_items?.date)} at {viewingAppt.cart_items?.time}</p>
                 </div>
                 <div>

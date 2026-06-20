@@ -51,7 +51,7 @@ const Navbar = () => {
     navLinks.push({ title: 'DASHBOARD', path: '/admin' });
   }
 
-  const tealColor = "#00d5b4";
+  const tealColor = "#F59E0B";
 
   return (
     <nav className="fixed top-0 left-0 right-0 w-full z-[100] font-sans shadow-lg">
@@ -62,7 +62,7 @@ const Navbar = () => {
           {/* Mobile Layout */}
           <div className="flex flex-col md:hidden items-center justify-center gap-1.5 text-[11px] w-full text-center">
             <div className="flex flex-wrap justify-center items-center gap-x-4 gap-y-1">
-              <a href="https://maps.app.goo.gl/XeihvznitHPvkU6bA" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 text-gray-400 hover:text-[#00d5b4] transition-colors">
+              <a href="https://maps.app.goo.gl/XeihvznitHPvkU6bA" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 text-gray-400 hover:text-[#F59E0B] transition-colors">
                 <MapPin size={12} color={tealColor} className="shrink-0" />
                 <span>Shah Alam, Selangor</span>
               </a>
@@ -75,7 +75,7 @@ const Navbar = () => {
                 <span>09.00AM - 09.00PM</span>
               </div>
             </div>
-            <div className="flex items-center gap-1.5 font-bold text-[#00d5b4] bg-[#00d5b4]/10 px-3 py-0.5 rounded-full mt-0.5">
+            <div className="flex items-center gap-1.5 font-bold text-[#F59E0B] bg-[#F59E0B]/10 px-3 py-0.5 rounded-full mt-0.5">
               <Percent size={12} color={tealColor} className="shrink-0" />
               <span>Discount 25% for every service</span>
             </div>
@@ -85,7 +85,7 @@ const Navbar = () => {
           <div className="hidden md:flex justify-between items-center text-[13px] w-full">
             {/* Left side */}
             <div className="flex items-center gap-6">
-              <a href="https://maps.app.goo.gl/XeihvznitHPvkU6bA" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-[#00d5b4] transition-colors">
+              <a href="https://maps.app.goo.gl/XeihvznitHPvkU6bA" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-[#F59E0B] transition-colors">
                 <MapPin size={15} color={tealColor} className="shrink-0" />
                 <span>13, Jln Setia Gemilang BG U13/BG, 40170 Shah Alam, Selangor</span>
               </a>
@@ -97,7 +97,7 @@ const Navbar = () => {
 
             {/* Right side */}
             <div className="flex items-center gap-4">
-              <div className="flex items-center gap-2 font-bold text-[#00d5b4]">
+              <div className="flex items-center gap-2 font-bold text-[#F59E0B]">
                 <Percent size={15} color={tealColor} className="shrink-0" />
                 <span>Discount 25% for every service</span>
               </div>
@@ -132,8 +132,8 @@ const Navbar = () => {
                     to={link.path}
                     className={`text-[15px] font-black tracking-wider transition-colors ${
                       location.pathname === link.path || (link.title === 'HOME' && location.pathname === '/')
-                        ? 'text-[#00d5b4]' 
-                        : 'text-white hover:text-[#00d5b4]'
+                        ? 'text-[#F59E0B]' 
+                        : 'text-white hover:text-[#F59E0B]'
                     }`}
                   >
                     {link.title}
@@ -145,20 +145,20 @@ const Navbar = () => {
             {/* Social Icons & Mobile Menu Button */}
             <div className="flex items-center gap-4">
               <div className="hidden md:flex items-center gap-2.5">
-                <a href="https://www.facebook.com/share/p/1CFn9qVVpY/" className="w-8 h-8 flex items-center justify-center bg-[#00d5b4] hover:bg-[#00c0a0] transition-colors rounded-sm">
+                <a href="https://www.facebook.com/share/p/1CFn9qVVpY/" className="w-8 h-8 flex items-center justify-center bg-[#F59E0B] hover:bg-[#D97706] transition-colors rounded-full">
                   <Facebook size={18} className="text-black fill-black" />
                 </a>
-                <a href="https://www.instagram.com/sjtintedshop?igsh=bHB1cndraDZpdW44" className="w-8 h-8 flex items-center justify-center bg-[#00d5b4] hover:bg-[#00c0a0] transition-colors rounded-sm">
+                <a href="https://www.instagram.com/sjtintedshop?igsh=bHB1cndraDZpdW44" className="w-8 h-8 flex items-center justify-center bg-[#F59E0B] hover:bg-[#D97706] transition-colors rounded-full">
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
                 </a>
-                <a href="https://www.tiktok.com/@sjtintedandaccess?_r=1&_t=ZS-97CDN6hJxy9" className="w-8 h-8 flex items-center justify-center bg-[#00d5b4] hover:bg-[#00c0a0] transition-colors rounded-sm">
+                <a href="https://www.tiktok.com/@sjtintedandaccess?_r=1&_t=ZS-97CDN6hJxy9" className="w-8 h-8 flex items-center justify-center bg-[#F59E0B] hover:bg-[#D97706] transition-colors rounded-full">
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
                 </a>
               </div>
 
               {/* Mobile Menu Toggle */}
               <button 
-                className="lg:hidden p-2 text-white hover:text-[#00d5b4]"
+                className="lg:hidden p-2 text-white hover:text-[#F59E0B]"
                 onClick={() => setMobileOpen(!mobileOpen)}
               >
                 {mobileOpen ? <X size={28} /> : <Menu size={28} />}
@@ -178,7 +178,7 @@ const Navbar = () => {
                 to={link.path}
                 className={`block text-[15px] font-black tracking-wider ${
                   location.pathname === link.path || (link.title === 'HOME' && location.pathname === '/')
-                    ? 'text-[#00d5b4]' 
+                    ? 'text-[#F59E0B]' 
                     : 'text-white'
                 }`}
                 onClick={() => setMobileOpen(false)}
@@ -188,13 +188,13 @@ const Navbar = () => {
             ))}
             
             <div className="flex items-center gap-3 pt-4 border-t border-gray-800">
-              <a href="https://www.facebook.com/share/p/1CFn9qVVpY/" className="w-8 h-8 flex items-center justify-center bg-[#00d5b4] hover:bg-[#00c0a0] rounded-sm">
+              <a href="https://www.facebook.com/share/p/1CFn9qVVpY/" className="w-8 h-8 flex items-center justify-center bg-[#F59E0B] hover:bg-[#D97706] rounded-full">
                 <Facebook size={18} className="text-black fill-black" />
               </a>
-              <a href="https://www.instagram.com/sjtintedshop?igsh=bHB1cndraDZpdW44" className="w-8 h-8 flex items-center justify-center bg-[#00d5b4] hover:bg-[#00c0a0] rounded-sm">
+              <a href="https://www.instagram.com/sjtintedshop?igsh=bHB1cndraDZpdW44" className="w-8 h-8 flex items-center justify-center bg-[#F59E0B] hover:bg-[#D97706] rounded-full">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
               </a>
-              <a href="https://www.tiktok.com/@sjtintedandaccess?_r=1&_t=ZS-97CDN6hJxy9" className="w-8 h-8 flex items-center justify-center bg-[#00d5b4] hover:bg-[#00c0a0] rounded-sm">
+              <a href="https://www.tiktok.com/@sjtintedandaccess?_r=1&_t=ZS-97CDN6hJxy9" className="w-8 h-8 flex items-center justify-center bg-[#F59E0B] hover:bg-[#D97706] rounded-full">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
               </a>
             </div>

@@ -117,7 +117,7 @@ export default function ContactLeadsManager() {
                       <div className="flex items-center justify-end gap-2">
                         <button 
                           onClick={() => setViewingLead(lead)}
-                          className="p-2 text-[#00d5b4] hover:bg-[#00d5b4]/10 rounded transition-colors"
+                          className="p-2 text-[#F59E0B] hover:bg-[#F59E0B]/10 rounded transition-colors"
                           title="View Details"
                         >
                           <MessageSquare className="w-4 h-4" />

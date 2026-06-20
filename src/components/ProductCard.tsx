@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Product } from '@/data/products';
+import { CheckCircle2, ChevronRight } from 'lucide-react';
 
 interface ProductCardProps {
   product: Product;
@@ -14,52 +15,65 @@ const ProductCard = ({ product }: ProductCardProps) => {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
-      className="bg-[#1a1f2e] border border-gray-800 rounded flex flex-col items-center group shadow-xl hover:border-teal-500/30 transition-all duration-300"
+      initial={{ opacity: 0, y: 50, scale: 0.9 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ 
+        duration: 0.8, 
+        type: "spring", 
+        bounce: 0.4 
+      }}
+      className="relative bg-gradient-to-b from-[#1a1f2e] to-[#0f121b] rounded-2xl overflow-hidden group hover:-translate-y-2 transition-all duration-500 shadow-xl"
     >
-      {/* Top Image Banner */}
-      <div className="w-full aspect-square bg-white overflow-hidden relative border-b-2 border-gray-800">
-        <img 
-          src={product.image} 
-          alt={product.name} 
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
-          loading="lazy" 
-        />
-      </div>
-
-      {/* Content Area */}
-      <div className="w-full p-6 text-center flex flex-col flex-grow">
-        <h3 className="font-heading text-teal-400 text-lg font-bold mb-2 tracking-wide">
-          {product.name}
-        </h3>
-        
-        <div className="text-white font-black text-4xl mb-6 tracking-wider">
-          RM{product.price}
+      <div className="relative z-10 flex flex-col h-full border border-gray-800/80 rounded-2xl overflow-hidden transition-colors duration-500">
+        {/* Top Image Banner */}
+        <div className="w-full aspect-[4/3] bg-white/5 overflow-hidden relative">
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0f121b] via-[#0f121b]/20 to-transparent z-10"></div>
+          <img 
+            src={product.image} 
+            alt={product.name} 
+            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" 
+            loading="lazy" 
+          />
+          {/* Badge */}
+          <div className="absolute top-4 right-4 z-20 bg-[#F59E0B] text-black text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full shadow-[0_0_15px_rgba(245,158,11,0.4)]">
+            Premium
+          </div>
         </div>
 
-        {/* Specs List */}
-        <div className="flex flex-col flex-grow w-full border-t border-gray-700/50">
-          {specs.map((spec, index) => (
-            <div 
-              key={index} 
-              className="py-3 border-b border-gray-700/50 text-gray-300 text-xs font-medium tracking-wide"
+        {/* Content Area */}
+        <div className="w-full p-6 md:p-8 flex flex-col flex-grow relative bg-transparent">
+          <h3 className="font-heading text-[#F59E0B] text-xl md:text-2xl font-bold mb-2 tracking-wide group-hover:text-white transition-colors duration-300">
+            {product.name}
+          </h3>
+          
+          <div className="flex items-baseline gap-1 mb-8">
+            <span className="text-gray-400 font-bold text-sm tracking-widest">RM</span>
+            <span className="text-white font-black text-4xl md:text-5xl tracking-wider">{product.price}</span>
+          </div>
+
+          {/* Specs List */}
+          <div className="flex flex-col flex-grow w-full space-y-4 mb-8">
+            {specs.map((spec, index) => (
+              <div 
+                key={index} 
+                className="flex items-start gap-3 text-gray-300 text-xs md:text-sm font-medium tracking-wide"
+              >
+                <CheckCircle2 className="w-4 h-4 text-[#F59E0B] shrink-0 mt-0.5 drop-shadow-[0_0_5px_rgba(245,158,11,0.5)]" />
+                <span className="leading-relaxed">{spec}</span>
+              </div>
+            ))}
+          </div>
+
+          {/* Action Button */}
+          <div className="mt-auto pt-6 border-t border-gray-800/80">
+            <Link 
+              to="/appointment" 
+              className="block w-full text-center bg-[#F59E0B] text-black text-[12px] font-black tracking-widest uppercase px-6 py-3.5 rounded-lg transition-all shadow-lg shadow-[#F59E0B]/20 hover:bg-white"
             >
-              {spec}
-            </div>
-          ))}
-        </div>
-
-        {/* Action Button */}
-        <div className="mt-8 mb-2">
-          <Link 
-            to="/appointment" 
-            className="inline-block border border-teal-400 text-white text-[11px] font-bold tracking-widest uppercase px-8 py-2.5 hover:bg-teal-400 hover:text-black transition-colors"
-          >
-            APPOINTMENT
-          </Link>
+              BOOK APPOINTMENT
+            </Link>
+          </div>
         </div>
       </div>
     </motion.div>
