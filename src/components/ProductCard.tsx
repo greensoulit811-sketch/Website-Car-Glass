@@ -27,18 +27,14 @@ const ProductCard = ({ product }: ProductCardProps) => {
     >
       <div className="relative z-10 flex flex-col h-full border border-gray-800/80 rounded-2xl overflow-hidden transition-colors duration-500">
         {/* Top Image Banner */}
-        <div className="w-full aspect-[4/3] bg-white/5 overflow-hidden relative">
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0f121b] via-[#0f121b]/20 to-transparent z-10"></div>
+        <div className="w-full aspect-[3/3.5] lg:aspect-[3/3] bg-white/5 overflow-hidden relative">
+          <div className="absolute inset-0"></div>
           <img 
             src={product.image} 
             alt={product.name} 
             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" 
             loading="lazy" 
           />
-          {/* Badge */}
-          <div className="absolute top-4 right-4 z-20 bg-[#F59E0B] text-black text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full shadow-[0_0_15px_rgba(245,158,11,0.4)]">
-            Premium
-          </div>
         </div>
 
         {/* Content Area */}
