@@ -53,7 +53,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
             {specs.map((spec, index) => (
               <div 
                 key={index} 
-                className="flex items-start gap-3 text-gray-300 text-xs md:text-sm font-medium tracking-wide"
+                className="flex items-start gap-3 text-gray-300 text-lg md:text-sm font-medium tracking-wide"
               >
                 <CheckCircle2 className="w-4 h-4 text-[#F59E0B] shrink-0 mt-0.5 drop-shadow-[0_0_5px_rgba(245,158,11,0.5)]" />
                 <span className="leading-relaxed">{spec}</span>
