@@ -390,7 +390,7 @@ const ProductPage = () => {
               </button>
 
               <a
-                href={`https://wa.me/+60193222058?text=${encodeURIComponent(`Hi! I'd like to order:\n\nProduct: ${product.name}\nBrand: ${product.brand}\nColor: ${selectedColor || 'Not selected'}\nSize: ${selectedSize || 'Not selected'}\nQuantity: ${quantity}\nPrice: RM ${displayPrice}\n\nPlease confirm my order. Thank you!`)}`}
+                href={`https://wa.me/+60103660467?text=${encodeURIComponent(`Hi! I'd like to order:\n\nProduct: ${product.name}\nBrand: ${product.brand}\nColor: ${selectedColor || 'Not selected'}\nSize: ${selectedSize || 'Not selected'}\nQuantity: ${quantity}\nPrice: RM ${displayPrice}\n\nPlease confirm my order. Thank you!`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full h-12 bg-[#25D366] text-white font-body text-sm font-bold tracking-wider uppercase hover:bg-[#20bd5a] transition-all duration-300 rounded-sm flex items-center justify-center gap-2 mb-8"
