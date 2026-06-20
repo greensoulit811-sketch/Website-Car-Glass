@@ -27,7 +27,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
     >
       <div className="relative z-10 flex flex-col h-full border border-gray-800/80 rounded-2xl overflow-hidden transition-colors duration-500">
         {/* Top Image Banner */}
-        <div className="w-full aspect-[3/3.5] lg:aspect-[3/3] bg-white/5 overflow-hidden relative">
+        <div className="w-full aspect-[3/4] lg:aspect-[3/3] bg-white/5 overflow-hidden relative">
           <div className="absolute inset-0"></div>
           <img 
             src={product.image} 
