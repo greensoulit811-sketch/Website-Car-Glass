@@ -32,7 +32,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
           <img 
             src={product.image} 
             alt={product.name} 
-            className="w-full h-full group-hover:scale-110 transition-transform duration-700 ease-out" 
+            className="w-full h-full" 
             loading="lazy" 
           />
         </div>
